@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col-12 co-sm-12 col-md-6 col-lg-7 col-xl-7 ps-0 text-center" style="background: #002142;">
+           <!-- <img src="../../assets/images/teamLiftssLogo.png" alt="TeamLiftssLogo"> -->
+           <!-- <img class="img-fluid" [src]=timer_img alt=""> -->
+           <h1>
+            <span>T</span>
+            <span>E</span>
+            <span>A</span>
+            <span>M</span>
+        </h1>
+        <p>
+          <span>L</span>
+          <span>I</span>
+          <span>F</span>
+          <span>T</span>
+          <span>S</span>
+          <span>S</span>
+        </p>
+        </div>
+        <div class="col-12 co-sm-12 col-md-6 col-lg-5 col-xl-5" style="background-color: #002142;">
+            <section class="logo_bg">
+                <div class="row">
+                    <div class="col-md-12" style="position: relative;">
+                        <div class="row">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-8 p-3 border" style="background-color: #fffffffa;position: relative; border-radius: 8px;">
+                              <!-- <img src="../../assets/images/teamLiftssLogo.png" alt="" class="logo"> -->
+                              
+                                <div class="container mt-3" style="padding: 10px 0px;" *ngIf="isLogin">
+                                <h2 class="text-center">Login</h2>
+                                <hr>
+                                <form  [formGroup]="loginGroup">
+                                  <div class="form-floating mb-3 mt-3 ">
+                                    <input type="text" class="form-control form-control-sm" id="userId" placeholder="Enter userId"  formControlName="username" name="userId">
+                                    <label for="userId">User ID</label>
+                                  </div>
+                                  <div class="form-floating mt-3 mb-3">
+                                    <input [type]="showPassword ? 'text' : 'password'" class="form-control form-control-sm" id="pwd" placeholder="Enter password"  formControlName="password" name="pswd">
+                                <span class="form-floating"  style="float: right;bottom: 38px;right: 10px; color: #002142;"><i class='bx bx-happy-heart-eyes ' style="cursor: pointer;font-size: 24px;" (click)="togglePasswordVisibility()"></i></span>
+                                    <label for="pwd">Password</label>
+                                  </div>
+                                  <div style="display: flex; position: relative;">
+                                    <a routerLink="" class=" justify-content-sm-end " 
+                                    >Forget Password?</a>
+                                   
+                                    <button type="submit" class="btn  glow-on-hover" (click)="loginMethod()">Login</button>
+                                  
+                                  </div>
+                                  <a routerLink="" (click)="chaneFun()">SignUP?</a>
+                                 
+                                </form>
+                              </div>
+                            <!--  -->
+
+                            <div class="container mt-3" style="padding: 10px 0px;" *ngIf="!isLogin">
+                              <h2 class="text-center">SignUP</h2>
+                              <hr>
+                              <form  [formGroup]="signUpGroup">
+                                <div class="form-floating mb-3 mt-3 ">
+                                  <input type="text" class="form-control form-control-sm" id="user" placeholder="Enter userId" autocomplete="off" formControlName="username" name="userId">
+                                  <label for="user">User ID</label>
+                                </div>
+                                <div class="form-floating mt-3 mb-3">
+                                  <input [type]="showPassword2 ? 'text' : 'password'"  class="form-control form-control-sm" id="pwd1" placeholder="Enter password" autocomplete="off" formControlName="password" name="pswd">
+                                <span class="form-floating"  style="float: right;bottom: 38px;right: 10px; color: #002142;"><i class='bx bx-happy-heart-eyes ' style="cursor: pointer;font-size: 24px;" (click)="togglePasswordVisibility2()"></i></span>
+                                  
+                                  <label for="pwd1">Password</label>
+                                </div>
+                                <div class="form-floating mt-3 mb-3">
+                                  <input type="password" class="form-control form-control-sm" id="pwd2" (input)="passwordCheck($event)" placeholder="Confirm password" autocomplete="off" formControlName="Repassword" name="pswd">
+                                  <label for="pwd2">Confirm password</label>
+                                </div>
+                                <div style="display: flex; position: relative;">
+                                  <!-- <a routerLink="" class=" justify-content-sm-end " 
+                                  >Forget Password?</a> -->
+                                  <a href="" (click)="chaneFun()">Login<i class='bx bx-log-in' ></i></a>
+                                  <button type="submit" class="btn  glow-on-hover" (click)="signUpMethod()">SignUP</button>
+                                
+                                </div>
+                               
+                              </form>
+                            </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+  </div>
