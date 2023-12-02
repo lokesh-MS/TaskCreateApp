@@ -1,0 +1,111 @@
+<!-- partial:index.partial.html -->
+<div class="sidebar">
+    <div class="logo-details">
+      <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+      <i class='bx bx-user icon'></i>
+  
+      <div class="logo_name">{{userName}}</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class='bx bx-search' ></i>
+        <input type="text" autocomplete="off" id="searchText" placeholder="Search..."  (input)="search($event)">
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a routerLink="home">
+          <!-- <i class='bx bx-grid-alt'></i> -->
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+          <!-- <span class="links_name">Dashboard</span> -->
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a routerLink="/admin/compose" [skipLocationChange]="true">
+          <i class='bx bx-edit'></i>
+          <span class="links_name">compose </span>
+        </a>
+        <span class="tooltip">compose </span>
+      </li>
+  
+      <li >
+        <a >
+          <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
+  
+          <ul class="dropdown-menu" style="margin-left: 65px;">
+            <!-- <li ><a class="dropdown-item" style=" background-color:#2f91a0; border-radius: 0%;">user1</a></li>
+            <li><a class="dropdown-item" style=" background-color:#2f91a0; border-radius: 0%;">user2</a></li>
+            <li><a class="dropdown-item" style=" background-color:#2f91a0; border-radius: 0%;">user3</a></li> -->
+  
+            <span class="links_name">compose </span>
+          </ul>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a routerLink="/admin/chatscreen">
+          <i class='bx bx-bell'></i>
+          <span class="links_name">Notification</span>
+          <span id="badge"  class="badge "></span>
+        </a>
+        <span class="tooltip">Notification</span>
+      </li>
+      <li>
+        <a routerLink="/admin/chatscreen">
+          <i class='bx bx-chat'></i>
+          <span class="links_name">Messages</span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <!-- <li>
+        <a routerLink="">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="links_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li> -->
+      <li>
+        <a routerLink="TaskList">
+          <i class='bx bx-list-ol'></i>
+          <span class="links_name">Task List</span>
+        </a>
+        <span class="tooltip">Task List</span>
+      </li>
+      <li>
+        <a routerLink="">
+          <i class='bx bx-folder'></i>
+          <span class="links_name">File Manager</span>
+        </a>
+        <span class="tooltip">Files</span>
+      </li>
+   
+      <li>
+        <a routerLink="/admin/saved">
+          <i class='bx bx-heart'></i>
+          <span class="links_name">Saved</span>
+        </a>
+        <span class="tooltip">Saved</span>
+      </li>
+      <li>
+        <a routerLink="">
+          <i class='bx bx-cog'></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile" (click)="LogOut()">
+        <div class="profile-details">
+          <!-- <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="profileImg"> -->
+          <div class="name_job">
+            <!-- <div class="name">LogOut</div> -->
+            <div class="job" style="font-weight: bold; font-size: 20px;">Logout</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out" style="cursor: pointer;"></i>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,39 @@
+#initial{
+    padding: 4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+}
+#uName{
+    margin-right: 15px;
+    color: #000000;
+    margin-top: 10px;
+    font-family: serif;
+    font-size: 18px;
+}
+.navbar-toggler{
+    margin-right: 10px;
+}
+img{
+    height: 50px;
+    width: auto;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .navbar-toggler-icon{
+        background-color: aliceblue;
+    }
+  }
+  @media only screen and (width > 288px) {
+    .navbar-toggler-icon{
+        background-color: #e91a93;
+    }
+    #img{
+       
+        height: 30px;
+    }
+  }

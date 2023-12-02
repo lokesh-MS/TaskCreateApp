@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit{
   loginGroup!: FormGroup;
   signUpGroup!:FormGroup;
 constructor(private fb:FormBuilder,private services:DbserviceService,
-  private el: ElementRef, private renderer: Renderer2,private notify:NotifyService,private router:Router,private storage:StorageService){}
+  private el: ElementRef, private renderer: Renderer2,
+  private notify:NotifyService,private router:Router,private storage:StorageService){}
 ngOnInit(): void {
   this.loginGroup=this.fb.group({
     username: ['', Validators.required],

@@ -1,0 +1,90 @@
+<div>
+  <button class="button-64" role="button" (click)="createAndAppendElement()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Create Slat</span></button>
+  <button class="button-64" role="button" (click)="SendTask()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Assign Task</span></button>
+</div>
+
+  
+  <!-- style="display: flex; justify-content: space-between;" -->
+<div class="line">
+  <h1>
+    <!-- TODAY<span> & </span>TASK -->
+    <hr /></h1>
+</div>
+<div id="cardDiv" >
+  
+
+  <div id="crd" *ngFor="let data of dataCount" style="position: relative;">
+    <label style="position: absolute;position: absolute;top: 1px;right: 12px;">
+      <input class="toggle-checkbox" type="checkbox" (click)="onCheckboxChange($event)">
+    
+      <div class="toggle-switch"></div>
+      <!-- <span class="toggle-label">Wi-fi</span> -->
+    </label>
+    <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
+    <i class='bx bx-plus'  (click)="ShowModal()"></i>
+    <div>
+      <button class="btn btn-success" (click)="ViewTaskDataInModal()">Send</button>
+    </div>
+
+    <div>
+      <button class="btn btn-d" (click)="ViewTaskDataInModal()">View</button>
+    </div>
+  
+   
+   
+  </div>
+
+</div>
+
+
+
+  <!-- Modal popup for create task-->
+
+ <!-- Modal -->
+ <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create Task</h4>
+        <!-- <p></p> -->
+        <span>{{Time}}</span>
+      </div>
+      <div class="modal-body">
+        <!-- <p>This is a small modal.</p> -->
+        <form [formGroup]="TaskGroup">
+          <div style="display: flex; width: 100%; justify-content: space-between;">
+          <div style="width: 44%;">
+            <div class="form-floating mb-3 mt-3 ">
+              <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..." autocomplete="off" formControlName="SendTo" name="SendTo">
+              <label for="To">To...</label>
+            </div>
+          </div>
+          <!-- second 50% -->
+          <div style="width: 55%;">
+            
+          <div class="form-floating mb-3 mt-3 ">
+            <input type="text" class="form-control form-control-sm" id="tittle"  autocomplete="off" formControlName="Tittle" name="Des">
+            <label for="tittle">Tittle...</label>
+          </div>
+          </div>
+        
+          </div>
+
+          <div class="form-floating mb-3 mt-3 ">
+            <input type="text" class="form-control form-control-sm" id="des" placeholder="Enter..." autocomplete="off" formControlName="Description" name="Des">
+            <label for="To">Description...</label>
+          </div>
+          <div class=" mb-3 mt-3 form-floating ">
+            <textarea class="form-control form-control-sm" style="height: 150px;"  cols="50" autocomplete="off" formControlName="Message" name="Message"></textarea>
+              <label for="des">Type Here...</label>
+            </div>
+      
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="CraeteTask()" data-bs-dismiss="modal">Create</button>
+      </div>
+    </div>
+  </div>
+</div>

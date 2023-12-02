@@ -10,11 +10,15 @@ export class DbserviceService {
 LoginUrl='https://localhost/ReportWebApi/api/Login/authenticate';
 //  SignupUrl='https://localhost/ReportWebApi/signUp';
  SignupUrl='https://localhost/ReportWebApi/api/signUp';
+ CreateTaskUrl='https://localhost:7205/api/Task';
 // 
   LoginService(userData:any){
     return this.http.post(this.LoginUrl,userData);
   }
   SignUpService(userData:any){
     return this.http.post(this.SignupUrl,userData);
+  }
+  Createtaskservice(TaskData:any){
+    return this.http.post(this.CreateTaskUrl,TaskData);
   }
 }
