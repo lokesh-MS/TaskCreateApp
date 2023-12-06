@@ -5,3 +5,25 @@
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
   }
+
+  .spanCard{
+    color: cadetblue;
+    font-weight: bold;
+    font-size: 19px;
+  }
+  
+  #detailsDiv{
+      margin: auto;
+      text-align: center;
+  }
+  p{
+    margin: 0;
+  }
+  .bx-message-alt-x{    
+    font-size: 26px;
+    color: red;
+    cursor: pointer;
+    top: 3px;
+    position: absolute;
+    right: 7px;
+  }

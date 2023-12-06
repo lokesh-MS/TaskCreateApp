@@ -36,7 +36,7 @@ chaneFun(){
 // Login method
 
 loginMethod(){
-  
+  debugger
   console.log(this.loginGroup.value);
   if(this.loginGroup.value.username == ""){
    let userNameInput =  this.el.nativeElement.querySelector("#userId");
@@ -62,7 +62,7 @@ return;
 this.storage.StoreToken(res.token);
 this.storage.StoreUser(res.username);
 this.notify.showSuccess('LoginSuccessfully','Login!')
-this.router.navigate(["/admin"])
+this.router.navigate(["/dashboard"])
     },
     error:(err:any)=>{
 console.log(err.error.message);

@@ -7,14 +7,13 @@
 <div id="cardDiv" >
 
 
-<div id="crd" *ngFor="let data of dataCount" style="position: relative;">
-  <label style="position: absolute;position: absolute;top: 1px;right: 12px;">
-    <input class="toggle-checkbox" type="checkbox">
-  
-    <div class="toggle-switch"></div>
-    <!-- <span class="toggle-label">Wi-fi</span> -->
-  </label>
- 
+<div id="crd" *ngFor="let arrdata of TaskRecord" style="position: relative;">
+
+  <div id="detailsDiv">
+    <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
+    <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
+
+  </div>
   <div>
     <button class="btn btn-success" (click)="ViewTask()">View</button>
   </div>
