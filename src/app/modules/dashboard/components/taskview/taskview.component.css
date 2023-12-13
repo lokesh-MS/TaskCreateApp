@@ -1,5 +1,5 @@
-.box{
-    /* margin: auto; */
+/* .box{
+   
     position: absolute;
     background-color: #2290af33;
     align-items: center;
@@ -8,18 +8,50 @@
     border-radius: 15px;
     top: 62px;
   
+} */
+.slide-fwd-center {
+	-webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          position: absolute;
 }
+
+ @-webkit-keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+  }
+}
+@keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+  }
+}
+
+/* @keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+} */
 .buttonDiv{
     opacity: 1;
-       
-    
-   
+    margin-top: 5%
 }
 .btn{
     background-color: #d82323de;
     color: whitesmoke;
     width: 12%;
-
     cursor: pointer;
     bottom: 4px;
     right: 157px;
@@ -130,7 +162,7 @@
   #btn3{
     bottom: 45px;
     width: 24%;
-    right: 0;
+    right: 4px;
     background: darkslategray;
   }
   .btn:hover{

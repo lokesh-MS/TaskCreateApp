@@ -10,8 +10,9 @@ export class DbserviceService {
 LoginUrl='https://localhost/ReportWebApi/api/Login/authenticate';
 //  SignupUrl='https://localhost/ReportWebApi/signUp';
  SignupUrl='https://localhost/ReportWebApi/api/signUp';
- CreateTaskUrl='https://localhost:7205/api/Task';
- GetTaskRecordsUrl='https://localhost:7205/api/Task'
+BaseUrl='https://localhost:7205/api/Task';
+//  GetTaskRecordsUrl='https://localhost:7205/api/Task'
+pradeepUrl='https://localhost:7282/api/Country'
 // 
   LoginService(userData:any){
     return this.http.post(this.LoginUrl,userData);
@@ -20,9 +21,18 @@ LoginUrl='https://localhost/ReportWebApi/api/Login/authenticate';
     return this.http.post(this.SignupUrl,userData);
   }
   Createtaskservice(TaskData:any){
-    return this.http.post(this.CreateTaskUrl,TaskData);
+    return this.http.post(this.BaseUrl,TaskData);
   }
   getTaskService(){
-    return this.http.get(this.GetTaskRecordsUrl)
+    return this.http.get(this.BaseUrl)
+  }
+  EditTask(id:any,data:any){
+    return this.http.put(this.BaseUrl+'/'+id,data)
+  }
+  GetSingleTask(id:any){
+    return this.http.get(this.BaseUrl+'/'+id)
+  }
+  pradeep(){
+    return this.http.get(this.pradeepUrl)
   }
 }

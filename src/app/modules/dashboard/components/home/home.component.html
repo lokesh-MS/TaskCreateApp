@@ -1,6 +1,6 @@
 <div>
   <button class="button-64" role="button" (click)="createAndAppendElement()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Create Slat</span></button>
-  <button class="button-64" role="button" (click)="SendTask()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Assign Task</span></button>
+  <!-- <button class="button-64" role="button" (click)="SendTask()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Assign Task</span></button> -->
 </div>
 
   
@@ -10,38 +10,34 @@
     <!-- TODAY<span> & </span>TASK -->
     <hr /></h1>
 </div>
-<div id="body">
-  <div class="cardDiv" *ngFor="let arrdata of TaskRecord"  >
+<div id="cardDiv"   >
   
 
-    <div class="crd" *ngFor="let data of dataCount"  style="position: relative;">
-   
-      <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
-      <i class='bx bx-message-alt-x'></i>
-      <div *ngIf="arrdata==null">
-        <i class='bx bx-plus'  (click)="ShowModal()"></i>
-      </div>
-      <div id="detailsDiv">
-        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
-        <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-  
-      </div>
-      <div>
-        <button class="btn btn-success" (click)="sendSingleTask()">Send</button>
-      </div>
-  
-      <div>
-        <button class="btn btn-d" (click)="ViewTaskDataInModal()">View</button>
-      </div>
-    
-     
-     
+  <div id="crd"  *ngFor="let arrdata of filteredData"  style="position: relative;">
+ 
+    <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
+    <i class='bx bx-message-alt-x'></i>
+    <div *ngIf="arrdata==null">
+      <i class='bx bx-plus'  (click)="ShowModal()"></i>
+    </div>
+    <div id="detailsDiv">
+      <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
+      <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
+
+    </div>
+    <div>
+      <button class="btn btn-success" (click)="EditTask(arrdata.id)">Edit</button>
+    </div>
+
+    <div>
+      <button class="btn btn-d" (click)="ReadTaskrecord()">View</button>
     </div>
   
+   
+   
   </div>
 
 </div>
-
 
 
 
@@ -90,7 +86,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="CraeteTask()" data-bs-dismiss="modal">Create</button>
+        <button type="button" id="modaleCRBtn" class="btn btn-default" (click)="CraeteTask()" data-bs-dismiss="modal">Create</button>
+        <button type="button" id="modaleUPBtn" class="btn btn-default" (click)="Update()" data-bs-dismiss="modal">Update</button>
       </div>
     </div>
   </div>

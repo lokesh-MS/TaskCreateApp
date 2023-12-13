@@ -9,6 +9,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskviewComponent } from './components/taskview/taskview.component';
 import { TasklistComponent } from './components/tasklist/tasklist.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 
@@ -20,7 +21,8 @@ import { TasklistComponent } from './components/tasklist/tasklist.component';
     NavbarComponent,
     SidenavComponent,
     TaskviewComponent,
-    TasklistComponent
+    TasklistComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,

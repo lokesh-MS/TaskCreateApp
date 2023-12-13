@@ -12,7 +12,8 @@
   top: 67px;
   height: 100%;
   /* width: 78px; */
-  width: auto;
+  /* width: auto; */
+  width: 16%;
   /* background: #00B8A9; */
   background-color: #006E7F;
   padding: 6px 14px;
@@ -27,7 +28,7 @@
     width: 78px;
   }
 .sidebar .logo-details {
-  height: 60px;
+  height: 28px;
   display: flex;
   align-items: center;
   position: relative;
@@ -119,7 +120,7 @@
   font-weight: 400;
   outline: none;
   height: 50px;
-  width: 90%;
+  width: 100%;
   width: 50px;
   border: none;
   border-radius: 12px;
@@ -155,7 +156,7 @@
 .sidebar li a {
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 80%;
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
@@ -237,7 +238,7 @@
   transform: translateY(-50%);
   /* background: #00B8A9; */
   background: #006E7F;
-  width: 100%;
+  width: 80%;
   height: 60px;
   line-height: 60px;
   border-radius: 0px;

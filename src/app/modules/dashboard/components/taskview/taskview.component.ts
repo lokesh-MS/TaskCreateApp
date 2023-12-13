@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DbserviceService } from 'src/app/service/dbservice.service';
 declare var $:any;
 @Component({
   selector: 'app-taskview',
@@ -6,7 +8,7 @@ declare var $:any;
   styleUrls: ['./taskview.component.css']
 })
 export class TaskviewComponent implements OnInit{
-constructor(){
+constructor(private service:DbserviceService,private router:Router ){
 
 }
 
@@ -33,5 +35,11 @@ onCheckboxChange(event: any) {
   } else {
     console.log('Checkbox is unchecked');
   }
+}
+GoBack(){
+  // this.router.navigateByUrl('TaskList')
+  this.router.navigate(["dashboard/TaskList"])
+  console.log('cls');
+  
 }
 }
