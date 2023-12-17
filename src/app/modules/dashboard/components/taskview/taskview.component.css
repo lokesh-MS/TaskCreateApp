@@ -9,6 +9,11 @@
     top: 62px;
   
 } */
+.row{
+  display: flex;width: 100%;
+  border-bottom: 2px solid ;
+  padding: 27px 0px;
+}
 .slide-fwd-center {
 	-webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -44,10 +49,7 @@
     transform: translateY(-50px);
   }
 } */
-.buttonDiv{
-    opacity: 1;
-    margin-top: 5%
-}
+ 
 .btn{
     background-color: #d82323de;
     color: whitesmoke;
@@ -139,6 +141,9 @@
   .tittle{
     text-align: center;
     font-size: 26px;
+    background-color:#006E7F;
+    color: white;
+    border-left: 1px solid white;
   }
   .note{
     font-size: 20px;
@@ -169,9 +174,11 @@
     opacity: 0.8;
   }
   #addcomment{
-    top: 54px;
+    /* top: 54px;
+  
+    right: 10px; */
+    right: 2px;
     position: absolute;
-    right: 10px;
     border-radius: 7px;
   }
   .des{

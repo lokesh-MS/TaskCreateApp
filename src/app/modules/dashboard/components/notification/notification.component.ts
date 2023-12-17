@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,DoCheck} from '@angular/core';
 import { Router } from '@angular/router';
 import { DbserviceService } from 'src/app/service/dbservice.service';
 
@@ -8,12 +8,22 @@ import { DbserviceService } from 'src/app/service/dbservice.service';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent implements OnInit{
-constructor(private service:DbserviceService,private http:HttpClient,private router:Router){}
+export class NotificationComponent implements OnInit,DoCheck{
+constructor(private service:DbserviceService,private http:HttpClient,private router:Router){
+  this.GetAllTaskRecords()
+
+}
 TaskRecord=new Array<any>();
 filteredData: any=[];
+reverArr:any=[]
 ngOnInit(): void {
-  this.GetAllTaskRecords()
+  
+
+  
+}
+ngDoCheck(): void {
+  console.log(this.TaskRecord);
+  this.reverArr= this.filteredData.slice().reverse();
 }
 GetAllTaskRecords(){
   this.service.getTaskService().subscribe({

@@ -8,10 +8,11 @@
           <span class="checkbox"></span>
         </label>
       </div>
-      <div class="row" style="display: flex;width: 100%;">
-        <div style="width: 70%;">
+      <div class="row" >
+        <h6 class="tittle">Tittle</h6>
+        <div style="width: 70%;border-right: 2px solid;padding: 0px 15px;">
             <p id="time">Time:</p>
-            <h6 class="tittle">Tittle</h6>
+            
             <h2 class="note">INFO:-</h2>
             <h3 id="mess">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fugiat temporibus provident error perferendis expedita aut, ducimus consequatur harum totam facere vero mollitia ullam atque amet dicta tenetur distinctio iure.</h3>
             <h2 class="des">Description:-</h2>
@@ -19,15 +20,21 @@
         </div>
         <div style="width: 30%;" >
         
-        <textarea name="addcomment" id="addcomment" style="display: none;" placeholder="Enter Your Points..." cols="35" rows="10" ></textarea>
-        </div>
-      </div>
-     
-</div>
-<div class="buttonDiv">
+        <textarea name="addcomment" id="addcomment" style="display: none;" placeholder="Enter Your Points..." cols="46" rows="7" ></textarea>
+       
+      <!-- btn div -->
+  <div class="buttonDiv">
     <button class="btn" id="btn3" (click)="commentShowFun()">Add your Note</button>
     <button class="btn" (click)="GoBack()">Close</button>
     <button class="btn" id="btn2">Complete</button>
 </div>
+      </div>
+
+
+  
+      </div>
+   
+</div>
+
     </div>
 </div>

@@ -1,13 +1,14 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2,DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit{
-constructor(private router:Router,private el: ElementRef, private renderer: Renderer2,){}
+export class SidenavComponent implements OnInit , DoCheck{
+constructor(private router:Router,private el: ElementRef, private renderer: Renderer2, private sessionStorage:StorageService){}
 ngOnInit(): void {
   let closeBtn = this.el.nativeElement.querySelector('#btn');
   let sidebar = this.el.nativeElement.querySelector('.sidebar');
@@ -40,6 +41,11 @@ ngOnInit(): void {
    });
 }
 userName:any
+ngDoCheck(): void {
+  this.userName= this.sessionStorage.GetUser();
+  console.log(`docheck`,this.userName);
+  
+}
   // logout function
    
   LogOut(){

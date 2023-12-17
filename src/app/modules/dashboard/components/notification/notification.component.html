@@ -2,31 +2,24 @@
 <div class="line" >
    
       <!-- TODAY<span> & </span>TASK -->
-      <p  style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">Task List</p>
+      <p  style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">Today List</p>
       <hr />
     </div>
-    <div id="cardDiv" >
+   
     
     
-    <div id="crd" *ngFor="let arrdata of TaskRecord" style="position: relative;">
-       <p><span id="time">{{arrdata.taskAssignTime}}</span></p> 
+    <div id="crd" *ngFor="let arrdata of reverArr">
+       <p><span id="time">{{arrdata.time}}</span></p> 
       <i class='bx bx-message-alt-x'></i>
-      <div id="detailsDiv">
-        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
+      <div id="detailsDiv" (click)="ViewTask()">
+        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.created_By}}</p>
         <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-    
+   
+       
       </div>
-      <div class="btnDiv">
-        <button class="btn btn-success" (click)="ViewTask()">View</button>
-      </div>
-    
-    
-    
-     
-     
     </div>
     
-    </div>
+
     
     
     

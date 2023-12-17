@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DbserviceService } from 'src/app/service/dbservice.service';
 import { NotifyService } from 'src/app/service/notify.service';
+import { StorageService } from 'src/app/service/storage.service';
 declare var $:any
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ declare var $:any
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  constructor(private renderer: Renderer2, private el: ElementRef ,private fb:FormBuilder , private service:DbserviceService,private notify:NotifyService) {}
+  constructor(private renderer: Renderer2, private el: ElementRef ,
+    private fb:FormBuilder , private service:DbserviceService,private notify:NotifyService,private sessionStorage:StorageService) {}
 Time:any;
 TaskGroup!:FormGroup;
   dataCount = new Array<any>();
@@ -28,7 +30,8 @@ TaskGroup!:FormGroup;
       Description:['',Validators.required],
       Status:['',Validators.required],
       TaskAssignTime:[''],
-      Created_By:['']
+      Created_By:[''],
+      Time:[''],
     })
    this.Time= this.getCurrentTime()
  
@@ -61,6 +64,8 @@ let CreateBtn= document.getElementById('modaleCRBtn')
     // console.log(this.taskArray);
   
     this.TaskGroup.value.TaskAssignTime=this.Time;
+    this.TaskGroup.value.Time=this.timeString;
+    this.TaskGroup.value.Created_By = this.sessionStorage.GetUser();
     this.service.Createtaskservice(this.TaskGroup.value).subscribe({
       next:(res:any)=>{
         console.log(res);
@@ -89,6 +94,7 @@ ShowModal(){
 }
 
   // Time funtionality
+  timeString:any;
   getCurrentTime() {
     var now = new Date();
     var hours:any = now.getHours();
@@ -110,7 +116,8 @@ ShowModal(){
   
     // var timeString = hours + ':' + minutes + ' ' + ampm +' - '+year+'/'+month+'/'+day;
     const currentDate = new Date();
-    var timeString  = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    //  this.timeString  = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    this.timeString=`${hours}:${minutes}:${seconds}${ampm}`;
     
     return currentDate;
   }

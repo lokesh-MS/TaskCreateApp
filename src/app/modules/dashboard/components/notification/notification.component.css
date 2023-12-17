@@ -1,29 +1,22 @@
-#cardDiv{
-    position: relative;
-}
+
 
 #crd{
-    position: relative;
+background-color: #006e7f0f;
     border: 1px dotted gray;
-    width: 59%;
+    width: 98%;
     margin: auto;
     position: relative;
     margin: auto;
-    height: 96px;
+    height: 60px;
     animation: myAnim 2s ease 0s 1 normal forwards;
+}
+#detailsDiv{
+	position: relative;
 }
 p:nth-child(1){
     display: flex;
 }
-.btnDiv{
-    width: 100%;
-    position:absolute;
-}
-button{
-    position: absolute;
-    right: 1px;
-    width: 16%;
-}
+
 #time{
     position: absolute;
     right: 34px;
