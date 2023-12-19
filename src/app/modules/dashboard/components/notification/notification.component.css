@@ -8,6 +8,8 @@ background-color: #006e7f0f;
     position: relative;
     margin: auto;
     height: 60px;
+	margin-top: 10px;
+	cursor: pointer;
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
 #detailsDiv{
@@ -16,10 +18,20 @@ background-color: #006e7f0f;
 p:nth-child(1){
     display: flex;
 }
+.bxs-user-voice{
 
+	font-size: 26px;
+}
+.data{
+	font-size: 13px;
+}
 #time{
     position: absolute;
     right: 34px;
+	font-size: 11px;
+    font-weight: bold;
+    top: 4px;
+    color: cadetblue;
 }
 
 /* @keyframes myAnim {

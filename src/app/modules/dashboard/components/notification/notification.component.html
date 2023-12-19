@@ -8,15 +8,20 @@
    
     
     
-    <div id="crd" *ngFor="let arrdata of reverArr">
-       <p><span id="time">{{arrdata.time}}</span></p> 
-      <i class='bx bx-message-alt-x'></i>
-      <div id="detailsDiv" (click)="ViewTask()">
-        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.created_By}}</p>
-        <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-   
-       
+    <div  *ngFor="let arrdata of reverArr">
+      <div id="crd">
+        <p><span id="time">{{arrdata.time}}</span></p> 
+        <i class='bx bx-message-alt-x'></i>
+        <div id="detailsDiv" (click)="ViewTask()">
+          <p id="sendTo"><i class='bx bxs-user-voice'></i><span class="data">{{arrdata.created_By}}</span></p>
+          <p id="Tittle"><span >Tittle:-</span><span class="data">{{arrdata.tittle}}</span ></p>
+     
+         
+        </div>
+
+
       </div>
+     
     </div>
     
 

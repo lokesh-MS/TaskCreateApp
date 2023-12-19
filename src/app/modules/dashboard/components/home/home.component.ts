@@ -29,16 +29,14 @@ TaskGroup!:FormGroup;
       Tittle:['',Validators.required],
       Description:['',Validators.required],
       Status:['',Validators.required],
-      TaskAssignTime:[''],
+      Task_Assign_Time:[''],
       Created_By:[''],
       Time:[''],
     })
    this.Time= this.getCurrentTime()
  
    this.getTaskRecord()
-   setTimeout(() => {
-    console.log(this.filteredData);
-  }, 3000);
+  
   
   // const element = document.querySelector('#modaleBtn');
   // let element: HTMLElement | null = document.getElementById('modaleBtn');
@@ -60,15 +58,13 @@ let CreateBtn= document.getElementById('modaleCRBtn')
   }
   
   CraeteTask(){
-    // this.taskArray.push(this.TaskGroup.value)
-    // console.log(this.taskArray);
-  
-    this.TaskGroup.value.TaskAssignTime=this.Time;
+
+    this.TaskGroup.value.Task_Assign_Time=this.Time;
     this.TaskGroup.value.Time=this.timeString;
     this.TaskGroup.value.Created_By = this.sessionStorage.GetUser();
     this.service.Createtaskservice(this.TaskGroup.value).subscribe({
       next:(res:any)=>{
-        console.log(res);
+      
         this.TaskRecord=res
         this.getTaskRecord()
       },
@@ -87,7 +83,7 @@ let CreateBtn= document.getElementById('modaleCRBtn')
   }
 // show modal fun
 ShowModal(){
-  console.log('modal');
+
   
   $('#myModal').modal('show');
   this.Time= this.getCurrentTime()
@@ -117,7 +113,7 @@ ShowModal(){
     // var timeString = hours + ':' + minutes + ' ' + ampm +' - '+year+'/'+month+'/'+day;
     const currentDate = new Date();
     //  this.timeString  = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    this.timeString=`${hours}:${minutes}:${seconds}${ampm}`;
+    this.timeString=`${hours}:${minutes} ${ampm}`;
     
     return currentDate;
   }
@@ -125,7 +121,7 @@ ShowModal(){
   onCheckboxChange(event: any) {
     // Handle checkbox change here
     if (event.target.checked) {
-      console.log('Checkbox is checked');
+  
       this.TaskGroup.value.Status='Yes'
     } else {
       this.TaskGroup.value.Status='No'
@@ -144,7 +140,7 @@ const endOfDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), cur
 setTimeout(() => {
   this.filteredData = this.TaskRecord.filter(item => {
     // debugger
-    const itemDate = new Date(item.taskAssignTime);
+    const itemDate = new Date(item.task_Assign_Time);
     return itemDate >= startOfDay && itemDate < endOfDay;
   });
 }, 200);
@@ -171,14 +167,14 @@ setTimeout(() => {
    $(CreateBtn).addClass('modaleBtn')
     this.service.GetSingleTask(id).subscribe({
       next:(res:any)=>{
-        console.log(res.send_To);
+        
         this.TaskGroup.patchValue({
           id:res.id,
           Send_To:res.send_To,
           Tittle:res.tittle,
           Description:res.description,
           Message:res.message,
-          TaskAssignTime:res.taskAssignTime
+          Task_Assign_Time:res.taskAssignTime
         })
         // this.buttonText = 'Update';
         
@@ -194,9 +190,9 @@ setTimeout(() => {
     
   }
   Update(){
-    console.log(this.TaskGroup.value);
+  
    let dataId= this.TaskGroup.value.id
-   this.TaskGroup.value.taskAssignTime=
+   this.TaskGroup.value.taskAssignTime
   //  this.service.GetSingleTask(dataId).subscribe({
   //   next:(res:any)=>{
 
@@ -204,7 +200,7 @@ setTimeout(() => {
   //  })
  this.service.EditTask(dataId,this.TaskGroup.value).subscribe({
   next:(res:any)=>{
-    console.log(res);
+  
     
   },
   error:(err:any)=>{

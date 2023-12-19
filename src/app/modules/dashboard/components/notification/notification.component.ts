@@ -36,7 +36,7 @@ GetAllTaskRecords(){
         setTimeout(() => {
           this.filteredData = this.TaskRecord.filter((item:any) => {
             // debugger
-            const itemDate = new Date(item.taskAssignTime);
+            const itemDate = new Date(item.task_Assign_Time);
             return itemDate >= startOfDay && itemDate < endOfDay;
           });
         }, 200);

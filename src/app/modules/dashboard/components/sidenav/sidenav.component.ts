@@ -14,7 +14,7 @@ ngOnInit(): void {
   let sidebar = this.el.nativeElement.querySelector('.sidebar');
   let searchBtn =  this.el.nativeElement.querySelector(".bx-search");
    closeBtn.addEventListener('click', () => {
-     console.log('Button clicked!');
+    //  console.log('Button clicked!');
      sidebar.classList.toggle("open");
      menuBtnChange(); //calling the function(optional)
    });
@@ -43,7 +43,7 @@ ngOnInit(): void {
 userName:any
 ngDoCheck(): void {
   this.userName= this.sessionStorage.GetUser();
-  console.log(`docheck`,this.userName);
+  // console.log(`docheck`,this.userName);
   
 }
   // logout function
