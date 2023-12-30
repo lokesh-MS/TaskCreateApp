@@ -1,135 +1,87 @@
-
 #crd {
-    min-height: 200px;
-    display: flex;
-    /* flex-direction: column;
-    justify-content: space-between; */
-    height: 205px;
-    width: 200px;
-    /* padding: 35px; */
-    margin-left: 30px;
-    margin-top: 36px;
-    border: 1px solid rgba(255, 255, 255, .25);
-   border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  
-    /* backdrop-filter: blur(15px);  */
-  }
-  .bxs-user-voice{
+  min-height: 143px;
+  display: flex;
 
-    font-size: 26px;
-  }
-  .btn-success{
-    width: 84px;
-    bottom: 0;
-    position: absolute;
-    right: 0px;
-    border-radius: 10px 0px 20px;
-    background-color: #006E7F !important;
-  }
-  .bx-bookmark-alt-plus{
-    font-size: 24px;
-    top: 10px;
-    position: absolute;
-
-
-  }
-  .bx-bookmark-alt-plus:hover{
-    cursor: pointer;
-  }
-  /* #crd:hover{
-    cursor: pointer;
-    opacity: 0.5;
-  } */
-  .spanCard1{
-    font-size: 13px;
-    top: 2px;
-    left: 27px;
-    position: absolute;
-  }
-#cardDiv{
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  grid-gap: 1rem;
-  padding: 15px 0px;
+  margin-left: 17px;
+  margin-top: 36px;
+  max-width: 150px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
 }
 
-  /* add slat btn style code  */
-  /* CSS */
-.button-64 {
-  align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
+.bxs-user-voice {
+
+  font-size: 24px;
+}
+
+.btn-success {
+
+  width: 78px;
+  height: 32px;
+  bottom: 0;
+  position: absolute;
+  right: 0px;
+  border-radius: 10px 0px 20px;
+  background-color: #006E7F !important;
+}
+
+.bx-bookmark-alt-plus {
+  font-size: 24px;
+  top: 10px;
+  position: absolute;
+
+
+}
+
+.bx-bookmark-alt-plus:hover {
   cursor: pointer;
 }
 
-.button-64:active,
-.button-64:hover {
-  outline: 0;
-}
 
-.button-64 span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
 
-.button-64:hover span {
-  background: none;
-}
-
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
-  }
+#cardDiv {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  padding: 15px 0px;
+  /*  */
+  /* 
+  margin-top: 49px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(154px, 1fr));
+  grid-gap: 0rem;
+  padding: 0px 12px; */
 }
 
 /* Modal */
 
 
-.modal-header{
+.modal-header {
   background-color: #006E7F;
 }
-.modal-title{
+
+.modal-title {
   color: whitesmoke;
 }
-.btn-default{
+
+.btn-default {
   background-color: #006E7F;
   color: whitesmoke;
 }
+
 input[type="text"],
 textarea {
-    outline: none;
-    box-shadow: none !important;
-    border: 1px solid #000000 ;
-    background: transparent;
-    font-weight: bold;
-    
-    
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #000000;
+  background: transparent;
+  font-weight: bold;
+
+
 }
 
 /*  */
@@ -140,42 +92,29 @@ h1 {
   font-size: 3rem;
   color: #E85359;
   font-family: 'Cinzel Decorative', serif;
-  -webkit-font-feature-settings:"clig", "dlig", "hlig", "liga", "swsh", "onum";
-  -moz-font-feature-settings:"clig", "dlig", "hlig", "liga", "swsh", "onum";
-  font-feature-settings:"clig", "dlig", "hlig", "liga", "swsh";
+  -webkit-font-feature-settings: "clig", "dlig", "hlig", "liga", "swsh", "onum";
+  -moz-font-feature-settings: "clig", "dlig", "hlig", "liga", "swsh", "onum";
+  font-feature-settings: "clig", "dlig", "hlig", "liga", "swsh";
   padding-top: 1rem;
 }
-/* h1:before, h1:after, h1 hr:before, h1 hr:after {
-  content: '';
-    background: #FED279;
-    width: 22px;
-    height: 22px;
-    border: 1px solid #3F7963;
-    position: absolute;
-    transform: rotate(45deg) translatey(calc(61% + 44px));
-    transform-origin: center;
-    left: calc(22% + 89px);
-    z-index: 2;
-} */
+
+
 h1:after {
   left: auto;
-  right:  calc(5% - 21px);
+  right: calc(5% - 21px);
 }
+
 h1 hr:before {
   left: 0;
 }
+
 h1 hr:after {
   left: auto;
   right: -11px;
 }
+
 h1 hr {
-  /* width: 60%;
-  position: absolute;
-  top: 120px;
-  left: 29%;
-  bottom: 0;
-  background: #000000;
-  height: 1px;   */
+
 
   width: 47%;
   position: absolute;
@@ -185,18 +124,44 @@ h1 hr {
   background: #000000;
   height: 1px;
 }
-h1 span {color: #B3B04F;}
-.bx-plus{
-  cursor: pointer;
-  margin: auto; font-size: 50px; 
-  color: #80C2D4;
+
+h1 span {
+  color: #B3B04F;
 }
-.spanCard{
-  font-family: serif;
-  color: #05686c;
-}
-#sendTo{
+
+
+
+
+.spanCard1 {
+  top: 5px;
+  left: 27px;
+  font-weight: bold;
   position: absolute;
-    top: 0px;
-    left: 5px;
+  color: crimson;
+  font-size: 11px;
+
+}
+
+.spanCard2 {
+  font-size: 10px;
+  top: 34px;
+  left: 7px;
+  position: absolute;
+  font-weight: bold;
+  font-family: math;
+}
+
+#sendTo {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+
+#titleData {
+  font-size: 10px;
+}
+
+#detailsDiv {
+
+  line-height: 10px;
 }

@@ -10,34 +10,39 @@
     <!-- TODAY<span> & </span>TASK -->
     <hr /></h1>
 </div>
-<div id="cardDiv"   >
-  
-
-  <div id="crd"  *ngFor="let arrdata of filteredData"  style="position: relative;">
+<div id="cardDiv" >
+  <div   *ngFor="let arrdata of filteredData"  style="position: relative;" >
  
-    <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
-    <i class='bx bx-message-alt-x'></i>
-    <div *ngIf="arrdata==null">
-      <i class='bx bx-plus'  (click)="ShowModal()"></i>
-    </div>
-    <div id="detailsDiv">
-      <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
-      <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-
-    </div>
-    <div>
-      <button class="btn btn-success" (click)="EditTask(arrdata.id)">Edit</button>
-    </div>
-
-    <div>
-      <button class="btn btn-d" (click)="ReadTaskrecord()">View</button>
-    </div>
+    <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd" [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}" >
+ 
+      <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
+      <i class='bx bx-message-alt-x'></i>
+      <div *ngIf="arrdata==null">
+        <i class='bx bx-plus'  (click)="ShowModal()"></i>
+      </div>
+      <div id="detailsDiv">
+        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
+        <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
   
-   
-   
-  </div>
+      </div>
+      <div>
+        <button class="btn btn-success" *ngIf="arrdata.status!='c' && arrdata.status!='p' " (click)="EditTask(arrdata.id)">Edit</button>
+      </div>
+  
+      <div>
+        <button class="btn btn-d" (click)="ReadTaskrecord(arrdata.id)">View</button>
+      </div>
+    
+     
+     
+    </div>
+
+
+
 
 </div>
+</div>
+
 
 
 

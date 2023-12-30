@@ -9,10 +9,14 @@ import{HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ViewComponent } from './view/view.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ViewComponent,
+ 
   ],
   imports: [
     BrowserModule,

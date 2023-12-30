@@ -1,0 +1,74 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+body { margin: 30px; }
+.search {
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+}
+*{
+    margin: 0;
+}
+.search {display: inline-block;}
+
+.search input {
+  width: 250px;
+  height: 32px;
+
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+
+.search input { text-indent: 32px;}
+.search .fa-search { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.search .fa-search {left: auto; right: 10px;}
+.search{
+    position: absolute;
+    right: 30px;
+    top: 8px;
+
+}
+ul{
+  /* display: flex; */
+  display: flex;
+    width: 30%;
+    margin: auto;
+
+}
+li{
+margin: auto;
+}
+.fa-searchengin{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    font-size: 27px;
+    top: 3px;
+    color: #1b19198c;
+}
+.fa-searchengin:hover{
+    color: orangered;
+}
+.borderStyle{
+  border: 1px solid red !important;
+}
+
+.inf-content{
+  border:1px solid #DDDDDD;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}
+
+td{
+  color: darkcyan;
+    font-weight: bold;
+    font-family: math;
+}

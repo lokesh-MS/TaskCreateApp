@@ -9,9 +9,8 @@ nav{
     top: 0;
 }
 #uName{
-    margin-right: 15px;
-    color: #000000;
-    margin-top: 10px;
+    margin-right: 45px;
+    color: #ffffff;
     font-family: serif;
     font-size: 18px;
 }
@@ -22,6 +21,15 @@ img{
     height: 50px;
     width: auto;
     margin-left: 10px;
+}
+.bx-user-circle{
+    font-size: 27px;
+    position: absolute;
+    right: 13px;
+    color: #ebf465;
+    top: 5px;
+    cursor: pointer;
+
 }
 @media only screen and (max-width: 600px) {
     .navbar-toggler-icon{

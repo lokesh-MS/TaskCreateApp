@@ -1,0 +1,83 @@
+<!-- <div style="position: relative;">
+
+    <div class="details">
+
+        <div class="row" *ngFor="let data of singleData;">
+            <h6 class="tittle">Tittle:- <span>{{data.tittle}}</span></h6>
+            <div style="padding: 0; margin: 0; height: 45vh;">
+                <div style="padding: 0px 30px;">
+
+                    <p id="time">Time: <span>{{data.task_Assign_Time}}</span> </p>
+
+                    <h2 class="note">INFO:-</h2>
+                    <h4 id="mess"><span>{{data.message}}</span></h4>
+                    <h2 class="des">Description:-</h2>
+                    <p id="des"><span>{{data.description}}</span></p>
+                </div>
+
+                <div class="buttonDiv">
+
+
+                    <button class="btn" (click)="GoBack()">Close</button>
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div> -->
+
+
+
+<div class="row">
+
+    <div class="group panel-body inf-content" *ngFor="let data of singleData;">
+        <div class="row" id="row1" style="position: relative;">
+
+            <div style="padding: 10px 2px ;">
+                <img alt="" style="width:200px;" title="" class="rounded-circle img-thumbnail isTooltip"
+                    src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+<span id="createdTime">{{data.time}}</span>
+<div style="position: relative;   text-align: center;  width: 126px;"> <span style="position: absolute;     font-size: 20px;
+    font-weight: bold;">{{data.created_By}}</span></div>
+            </div>
+
+
+        </div>
+        <div class="row" id="row2">
+
+            <h4 class="tittle" style="font-family: Jost;     font-weight: bold;">Tittle:- <span style="    font-family: Slabo;
+                font-weight: bold;
+                color: cornflowerblue;
+                font-size: 19px;">{{data.tittle}}</span></h4>
+
+
+            <div id="info">
+                <p style="font-family:   Playball ; text-indent: 50px;
+                text-align: justify;
+                text-justify: inter-word;
+                word-spacing: 4px;
+                line-height: 27px;
+                color: black;
+                padding: 0px 19px 0px 3px;
+                font-size: 18px;
+               ">{{data.message}}</p>
+            </div>
+        </div>
+        <div class="row" id="row3">
+            <div style="position: relative;">
+                <p id="circle" (click)="GoBack()"><span id="back">BACK</span></p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

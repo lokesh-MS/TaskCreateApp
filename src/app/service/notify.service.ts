@@ -13,7 +13,7 @@ export class NotifyService {
     this.toastr.success(mes, header,{
       progressBar:true,
       timeOut:3000,
-      positionClass : "toast-top-center",
+      // positionClass : "toast-top-center",
     });
   }
 

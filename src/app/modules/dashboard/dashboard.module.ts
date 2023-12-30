@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskviewComponent } from './components/taskview/taskview.component';
 import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 
 
@@ -22,7 +24,9 @@ import { NotificationComponent } from './components/notification/notification.co
     SidenavComponent,
     TaskviewComponent,
     TasklistComponent,
-    NotificationComponent
+    NotificationComponent,
+    ProfileComponent,
+    UserInfoComponent
   ],
   imports: [
     CommonModule,

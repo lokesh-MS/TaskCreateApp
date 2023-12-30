@@ -1,23 +1,23 @@
 <div style="position: relative;">
-    <div class="slide-fwd-center " >
+
 <div class="details">
   
-      <div class="row"  >
-        <h6 class="tittle">Tittle</h6>
-        <div style="width: 70%;border-right: 2px solid;padding: 0px 15px;">
+      <div class="row" *ngFor="let data of singleData;"  >
+        <h6 class="tittle">Tittle:- <span>{{data.tittle}}</span></h6>
+        <div style="width: 70%;border-right: 2px solid;padding: 0px 15px; min-height: 45vh;" >
           
     <div class="checkbox-wrapper-40">
       <label>
-        <input type="checkbox" (click)="onCheckboxChange($event)"/>
+        <input type="checkbox" (click)="onCheckboxChange($event,data.id)"/>
         <span class="checkbox"></span>
       </label>
     </div>
-            <p id="time">Time:</p>
+            <p id="time">Time: <span>{{data.time}}</span> </p>
             
             <h2 class="note">INFO:-</h2>
-            <h3 id="mess">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fugiat temporibus provident error perferendis expedita aut, ducimus consequatur harum totam facere vero mollitia ullam atque amet dicta tenetur distinctio iure.</h3>
+            <h3 id="mess"><span style="font-family: Slabo;">{{data.message}}</span></h3>
             <h2 class="des">Description:-</h2>
-            <p id="des">E:\New folder\Angular Projects\TaskApplication\TaskCreateApp\src\app\modules>cd dashboard</p>
+            <p id="des"><span>{{data.description}}</span></p>
         </div>
         <div style="width: 30%;position: relative; padding: 0%;" >
         
@@ -29,7 +29,7 @@
 
       <button class="btn" id="btn3" (click)="commentShowFun()">Add Note</button>
       <button class="btn" (click)="GoBack()">Close</button>
-      <button class="btn" id="btn2">Complete</button>
+      <button class="btn" (click)="Complete(data.id)" id="btn2">Complete</button>
 
   
 </div>
@@ -41,5 +41,5 @@
    
 </div>
 
-    </div>
+  
 </div>

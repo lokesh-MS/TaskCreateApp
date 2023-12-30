@@ -1,14 +1,4 @@
-/* .box{
-   
-    position: absolute;
-    background-color: #2290af33;
-    align-items: center;
-    height: 500px;
-    width: 99%;
-    border-radius: 15px;
-    top: 62px;
-  
-} */
+
 .row{
   display: flex;width: 100%;
   border-bottom: 2px solid ;
@@ -16,11 +6,7 @@
   padding: 0px;
   margin: 57px 0px;
 }
-.slide-fwd-center {
-	-webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          position: absolute;
-}
+
 
  @-webkit-keyframes slide-fwd-center {
   0% {
@@ -43,19 +29,11 @@
   }
 }
 
-/* @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50px);
-  }
-} */
  .buttonDiv{
   position: absolute;
   bottom: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   width: 100%;
  }
 .btn{
@@ -63,6 +41,7 @@
     color: whitesmoke;
     cursor: pointer;
     font-weight: bold;
+    margin-left: 2px;
 }
 #btn2{
     background-color: #006E7F;
@@ -159,12 +138,10 @@
     text-indent: 50px;
     text-align: justify;
     text-justify: inter-word;
-    /* font-family: sans-serif; */
     word-spacing: 4px;
-    line-height: 30px;
+    line-height: 27px;
     font-family: serif;
-    font-size: 25px;
-    letter-spacing: 1px;
+    font-size: 17px;
   }
   *{
     font-family: sans-serif;

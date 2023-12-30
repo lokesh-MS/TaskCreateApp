@@ -9,15 +9,17 @@
     </div>
     <ul class="nav-list">
       <li>
-        <i class='bx bx-search' ></i>
+        <!-- <i class='bx bx-search' ></i>
         <input type="text" autocomplete="off" id="searchText" placeholder="Search..."  (input)="search($event)">
-        <span class="tooltip">Search</span>
+        <span class="tooltip">Search</span> -->
       </li>
       <li>
         <a routerLink="home">
           <!-- <i class='bx bx-grid-alt'></i> -->
-          <i class='bx bx-home'></i>
-          <span class="links_name">Home</span>
+          <!-- <i class='bx bx-home'></i> -->
+          <!-- <i class='bx bxs-pencil'></i> -->
+          <i class='bx bx-pencil' ></i>
+          <span class="links_name">Create</span>
           <!-- <span class="links_name">Dashboard</span> -->
         </a>
         <span class="tooltip">Dashboard</span>
@@ -30,13 +32,21 @@
         <span class="tooltip">compose </span>
       </li> -->
   
-      <li >
+      <!-- <li >
         <a >
-          <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
+         
   
           <ul class="dropdown-menu" style="margin-left: 65px;">
             <span class="links_name">compose </span>
           </ul>
+         
+        </a>
+        
+       
+      </li> -->
+      <li>
+        <a routerLink="userInfo">
+          <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
           <span class="links_name">Users</span>
         </a>
         <span class="tooltip">Users</span>

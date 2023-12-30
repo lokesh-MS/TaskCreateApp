@@ -20,4 +20,16 @@ export class StorageService {
   GetUser(){
     return sessionStorage.getItem('userName')
   }
+
+  StoreTaskId(id:any){
+    return sessionStorage.setItem('taskID',id)
+  }
+  GetTaskId(){
+    return sessionStorage.getItem('taskID')
+  }
+
+
+
+  // getting data from db methods 
+  
 }

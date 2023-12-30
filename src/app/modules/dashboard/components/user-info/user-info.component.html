@@ -1,0 +1,206 @@
+
+<div class="row" >
+
+    <div class="line" >
+   
+        <!-- TODAY<span> & </span>TASK -->
+        <p  style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">User INFO</p>
+        <hr />
+      </div>
+     
+
+<div class="col-md-12">
+    <div class="form-Group" [formGroup]="searchGroup" style="position: relative;">
+        <div class="search" style="position: absolute;">
+            <span class="fa-brands fa-searchengin" (click)="search()"></span>
+
+            <input id="input" placeholder="Search User Details " formControlName="userInput">
+          </div>
+
+    </div>
+</div>
+
+</div>
+<div class="row">
+
+<!-- app.component.html -->
+<div *ngFor="let data of arrayOfObjects">
+    <div class="container bootstrap snippets bootdey">
+        <div class="panel-body inf-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="" style="width:600px; padding: 20px;" title="" class="rounded-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
+                    <ul title="Ratings" class="list-inline ratings text-center">
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-bahai"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <!-- <strong>Information</strong><br> -->
+                    <div class="table-responsive">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>        
+                                <td >
+                                    <strong>
+                                        <i class="fa-brands fa-jedi-order text-primary"></i>
+                                        Identificacion                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.userName}}     
+                                </td>
+                            </tr>
+                            <tr>    
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-user  text-primary"></span>     -->
+                                        <i class="fa-solid fa-user-tie  text-primary"></i>
+                                        Name                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.firstName}}    {{data.lastName}}
+                                </td>
+                            </tr>
+                            <!-- <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                        Lastname                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                   
+                                </td>
+                            </tr> -->
+<!--         
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-user text-primary"></span> 
+                                        Username                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.userName}}
+                                </td>
+                            </tr> -->
+        
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-home text-primary"></span>  -->
+                                        <i class="fa-solid fa-house-chimney-user text-primary"></i>
+                                        <i class="bi bi-geo-alt"></i>    Address                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.address}}
+                                </td>
+                            </tr>
+        
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-globe text-primary"></span> 
+                                        <i class="fa-solid fa-city text-primary"></i>
+                                        City                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.city}}
+                                </td>
+                            </tr>
+
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-phone text-primary"></span>  -->
+                                        <i class="fa-solid fa-phone text-primary"></i>
+                                        Mobile                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.mobile}}
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-briefcase text-primary"></span>  -->
+                                        <i class="fa-solid fa-building-user text-primary"></i>
+                                        Department                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.department}}
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-calendar text-primary"></span> -->
+                                        <i class="fa-solid fa-calendar-days  text-primary"></i>
+                                        
+                                        DOB                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                     {{data.date_Of_Birth}}
+                                </td>
+                            </tr> 
+        
+                          
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-envelope text-primary"></span>  -->
+                                        <i class="fa-solid fa-envelope text-primary"></i>
+                                        Email                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.email}}
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-eye-open text-primary"></span> 
+                                        <i class="fa-solid fa-eye text-primary"></i>
+                                        Role                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.working_Type}}
+                                </td>
+                            </tr>
+
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <!-- <span class="glyphicon glyphicon-calendar text-primary"></span> -->
+                                        <i class="fa-solid fa-calendar-days  text-primary"></i>
+                                        Joining Date                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{data.joining_Date}}
+                                </td>
+                            </tr>
+                                                              
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>  
+</div>
+    
+    
+</div>

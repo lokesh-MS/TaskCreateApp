@@ -4,25 +4,31 @@
   <!-- TODAY<span> & </span>TASK -->
   <hr /></h1>
 </div>
-<div id="cardDiv" >
+<div id="cardDiv"  >
 
-
-<div id="crd" *ngFor="let arrdata of TaskRecord" style="position: relative;">
-  <i class='bx bx-message-alt-x'></i>
-  <div id="detailsDiv">
-    <p id="sendTo"><i class='bx bxs-user-voice'></i><span class="spanCard1">{{arrdata.send_To}}</span></p>
-    <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-
+<span  *ngFor="let arrdata of userArray">
+  <div id="crd"*ngIf="UserName==arrdata.send_To" style="position: relative;">
+    <i class='bx bx-message-alt-x'></i>
+    <div id="detailsDiv">
+      <p id="sendTo"><i class='bx bxs-user-voice'></i></p><span class="spanCard1">{{arrdata.created_By}}</span>
+      <p id="Tittle"><span class="spanCard2">Tittle:-</span></p>
+        <div>
+          <span id="titleData">{{arrdata.tittle}}</span>
+        </div>
+       
+  
+    </div>
+    <div>
+      <button class="btn btn-success" (click)="ViewTask(arrdata.id)">View</button>
+    </div>
+  
+  
+  
+   
+   
   </div>
-  <div>
-    <button class="btn btn-success" (click)="ViewTask()">View</button>
-  </div>
+</span>
 
-
-
- 
- 
-</div>
 
 </div>
 

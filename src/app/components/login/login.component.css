@@ -18,7 +18,14 @@ textarea {
     
     
 }
-
+.bx-happy-heart-eyes{
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+}
 input[type="password"],
 textarea {
     outline: none;

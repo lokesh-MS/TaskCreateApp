@@ -1,5 +1,5 @@
 /* Google Font Link */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
 .sidebar {
   position: fixed;
   left: 0;
-  top: 36px;
+ 
   height: 100%;
   /* width: 78px; */
   /* width: auto; */
@@ -34,7 +34,7 @@
   position: relative;
 }
 .sidebar .logo-details .icon {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
@@ -42,7 +42,7 @@
   color: #fff;
   font-size: 20px;
   font-weight: 600;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s ease;
 }
 .sidebar.open .logo-details .icon,
@@ -80,7 +80,7 @@
   line-height: 60px;
 }
 .sidebar .nav-list {
-  margin-top: 20px;
+  margin-top: 40px;
   height: 100%;
 }
 .sidebar li {
@@ -234,9 +234,9 @@
 .sidebar .profile #log_out {
   position: absolute;
   top: 50%;
-  right: 0;
+  /* right: 30px; */
   transform: translateY(-50%);
-  /* background: #00B8A9; */
+
   background: #006E7F;
   width: 80%;
   height: 60px;
@@ -244,10 +244,10 @@
   border-radius: 0px;
   transition: all 0.5s ease;
 }
-.sidebar.open .profile #log_out {
+/* .sidebar.open .profile #log_out {
   width: 50px;
   background: none;
-}
+} */
 .home-section {
   position: relative;
   background: #e4e9f7;
