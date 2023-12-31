@@ -37,7 +37,7 @@
     height: 205px;
     width: 200px;
     /* padding: 35px; */
-    margin-left: 35px;
+    margin-left: 30px;
     margin-top: 36px;
     /* border: 1px solid rgba(255, 255, 255, .25); */
    border-radius: 20px;
@@ -94,7 +94,7 @@
 #cardDiv{
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(224px,1fr));
   grid-gap: 1rem;
   
 }
@@ -169,14 +169,13 @@ h1 span {color: #B3B04F;}
 }
 .close{
   width: 29px;
-  color: red;
+  color: rgb(255, 255, 255);
+  background-color: rgb(192, 38, 38);
 }
 
-.close{
-  width: 29px;
-  color: red;
+.borderStyle{
+  border: 1px solid red !important;
 }
-
 /* .modaleEditBtn{
   display: none;
 } */

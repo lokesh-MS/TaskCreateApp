@@ -53,10 +53,10 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
         <h4 class="modal-title">Create Task</h4>
         <!-- <p></p> -->
-        <span>{{Time}}</span>
+        <span>{{timeString}}</span>
       </div>
       <div class="modal-body">
         <!-- <p>This is a small modal.</p> -->
@@ -65,7 +65,7 @@
           <div style="width: 44%;">
             <div class="form-floating mb-3 mt-3 ">
               <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..." autocomplete="off" formControlName="Send_To" name="SendTo">
-              <label for="To">To...</label>
+              <label for="To">*To...</label>
             </div>
           </div>
           <!-- second 50% -->
@@ -73,7 +73,7 @@
             
           <div class="form-floating mb-3 mt-3 ">
             <input type="text" class="form-control form-control-sm" id="tittle" placeholder="Enter..." autocomplete="off" formControlName="Tittle" name="Des">
-            <label for="tittle">Tittle...</label>
+            <label for="tittle">*Tittle...</label>
           </div>
           </div>
         
@@ -84,14 +84,14 @@
             <label for="To">Description...</label>
           </div>
           <div class=" mb-3 mt-3 form-floating ">
-            <textarea class="form-control form-control-sm" style="height: 150px;" placeholder="Enter..." cols="50" autocomplete="off" formControlName="Message" name="Message"></textarea>
-              <label for="des">Type Here...</label>
+            <textarea class="form-control form-control-sm" id="textArea" style="height: 150px;" placeholder="Enter..." cols="50" autocomplete="off" formControlName="Message" name="Message"></textarea>
+              <label for="des">*Type Here...</label>
             </div>
       
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" id="modaleCRBtn" class="btn btn-default" (click)="CraeteTask()" data-bs-dismiss="modal">Create</button>
+        <button type="button" id="modaleCRBtn" class="btn btn-default" (click)="CraeteTask()" >Create</button>
         <button type="button" id="modaleUPBtn" class="btn btn-default" (click)="Update()" data-bs-dismiss="modal">Update</button>
       </div>
     </div>

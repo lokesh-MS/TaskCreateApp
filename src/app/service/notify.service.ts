@@ -31,8 +31,8 @@ export class NotifyService {
      timeOut: 5000,
    });
      }
-      showWarning(mes:any){
-      this.toastr.warning(mes, 'Login', {
+      showWarning(mes:any,title:any){
+      this.toastr.warning(mes, title, {
      timeOut: 3000,
    });
      }

@@ -15,7 +15,8 @@
   /* width: auto; */
   width: 16%;
   /* background: #00B8A9; */
-  background-color: #006E7F;
+  /* background-color: #006E7F; */
+  background-color: #004D74;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -23,10 +24,10 @@
 /* .sidebar.open {
   width: 200px;
 } */
-.sidebar.close {
+/* .sidebar.close {
     background: #4076ea;
     width: 78px;
-  }
+  } */
 .sidebar .logo-details {
   height: 28px;
   display: flex;
@@ -162,7 +163,7 @@
   text-decoration: none;
   transition: all 0.4s ease;
   /* background: #00B8A9; */
-  background: #006E7F;
+  /* background: #006E7F; */
 }
 .sidebar li a:hover {
   background: #c0f1ed4f;
@@ -194,26 +195,15 @@
   font-size: 18px;
   border-radius: 12px;
 }
-.sidebar li.profile {
-  position: fixed;
-  height: 60px;
-  width: 78px;
-  left: 0;
-  bottom: -8px;
-  padding: 10px 14px;
-  /* background: #00B8A9; */
-  background: #006E7F;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
+
 .sidebar.open li.profile {
   width: 200px;
 }
-.sidebar li .profile-details {
+/* .sidebar li .profile-details {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-}
+} */
 .sidebar li img {
   height: 45px;
   width: 45px;
@@ -231,23 +221,8 @@
 .sidebar li.profile .job {
   font-size: 12px;
 }
-.sidebar .profile #log_out {
-  position: absolute;
-  top: 50%;
-  /* right: 30px; */
-  transform: translateY(-50%);
 
-  background: #006E7F;
-  width: 80%;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 0px;
-  transition: all 0.5s ease;
-}
-/* .sidebar.open .profile #log_out {
-  width: 50px;
-  background: none;
-} */
+
 .home-section {
   position: relative;
   background: #e4e9f7;

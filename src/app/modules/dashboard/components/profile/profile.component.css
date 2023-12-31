@@ -13,8 +13,10 @@ label{
 }
 #formTitle{
   text-align: center;
-    font-size: 27px;
-    font-family: math;
+  font-size: 27px;
+  color: #004d74;
+  font-weight: bold;
+  font-family: math;
 }
 input {
   outline: none;

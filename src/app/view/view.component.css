@@ -149,6 +149,9 @@
         MARGIN-LEFT: 86%;
         cursor: pointer;
       }
+      #back:hover{
+        color: red;
+      }
      #createdTime{
       position:absolute;
       right: 10px;

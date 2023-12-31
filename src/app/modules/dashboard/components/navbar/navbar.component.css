@@ -22,12 +22,12 @@ img{
     width: auto;
     margin-left: 10px;
 }
-.bx-user-circle{
+.fa-user-tie{
     font-size: 27px;
     position: absolute;
     right: 13px;
     color: #ebf465;
-    top: 5px;
+    top: 13px;
     cursor: pointer;
 
 }

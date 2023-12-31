@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
       if (userNameInput) {
         this.renderer.setStyle(userNameInput, 'border-color', 'red');
       }
-      this.notify.showWarning('Enter a valid User name!');
+      this.notify.showWarning('Enter a valid User name!','Login!');
       return;
     } else if (this.loginGroup.value.password == '') {
       let PasswordInput = this.el.nativeElement.querySelector('#pwd');
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
       if (PasswordInput) {
         this.renderer.setStyle(PasswordInput, 'border-color', 'red');
       }
-      this.notify.showWarning('Enter a valid Password!');
+      this.notify.showWarning('Enter a valid Password!',"Login!");
       return;
     }
 
@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
       },
       error: (err: any) => {
         console.log(err.error.message);
-        this.notify.showError(err.error.message, 'Login');
+        this.notify.showError(err.error.message, 'Login!');
       },
     });
   }
@@ -142,7 +142,7 @@ export class LoginComponent implements OnInit {
       if (userNameInput) {
         this.renderer.setStyle(userNameInput, 'border-color', 'red');
       }
-      this.notify.showWarning('Enter a valid User name!');
+      this.notify.showWarning('Enter a valid User name!',"SignUp!");
       return;
     } 
     else if (this.signUpGroup.value.password == '') {
@@ -152,7 +152,7 @@ export class LoginComponent implements OnInit {
         this.renderer.setStyle(PasswordInput1, 'border-color', 'red');
       }
 
-      this.notify.showWarning('Enter a valid Password!');
+      this.notify.showWarning('Enter a valid Password!','SignUp!');
       return;
     }
 
@@ -163,7 +163,7 @@ export class LoginComponent implements OnInit {
         this.renderer.setStyle(PasswordInput2, 'border-color', 'red');
       }
 
-      this.notify.showWarning('Enter a valid Password!');
+      this.notify.showWarning('Enter a valid Password!','SignUp!');
       return;
     }
 

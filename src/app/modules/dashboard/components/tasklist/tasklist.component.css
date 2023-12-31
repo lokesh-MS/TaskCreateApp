@@ -16,7 +16,9 @@
 
   font-size: 24px;
 }
-
+.btn-success:hover{
+  opacity: 0.8;
+}
 .btn-success {
 
   width: 78px;
@@ -25,7 +27,8 @@
   position: absolute;
   right: 0px;
   border-radius: 10px 0px 20px;
-  background-color: #006E7F !important;
+  /* background-color: #006E7F !important; */
+  background-color: #004D74 !important;
 }
 
 .bx-bookmark-alt-plus {

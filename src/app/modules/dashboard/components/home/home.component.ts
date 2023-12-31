@@ -30,7 +30,7 @@ export class HomeComponent
     private sessionStorage: StorageService,
     private router:Router
   ) {}
-  Time: any;
+  time: any;
   TaskGroup!: FormGroup;
   dataCount = new Array<any>();
   taskArray = new Array<any>();
@@ -59,7 +59,8 @@ export class HomeComponent
 
     this.userName = this.sessionStorage.GetUser();
 
-    this.Time = this.getCurrentTime();
+    this.time = this.getCurrentTime();
+console.log(this.time);
 
     this.getTaskRecord();
     this.colorChangeFunction();
@@ -82,21 +83,39 @@ export class HomeComponent
   }
 
   CraeteTask() {
-    this.TaskGroup.value.Task_Assign_Time = this.Time;
+    this.TaskGroup.value.Task_Assign_Time = this.time;
     this.TaskGroup.value.Time = this.timeString;
     this.TaskGroup.value.Created_By = this.sessionStorage.GetUser();
-    this.service.Createtaskservice(this.TaskGroup.value).subscribe({
-      next: (res: any) => {
-        this.TaskRecord = res;
-        this.getTaskRecord();
-      },
-      error: (err: any) => {
-        console.log(err);
-      },
-    });
-    this.getTaskRecord();
-    this.notify.showSuccess('Send Successfully', 'Task');
-    this.TaskGroup.reset();
+    debugger
+    if(this.TaskGroup.value.Message=="" || this.TaskGroup.value.Message==null){
+let txtBox=document.getElementById('textArea')
+if(txtBox){
+
+$("#textArea").addClass('borderStyle')
+$("#tittle").addClass('borderStyle')
+$("#To").addClass('borderStyle')
+$('#myModal').modal("hide");
+  
+}
+else{
+  this.notify.showWarning("please Fill Empty Fields","Note!")
+}
+    }
+    else{
+      this.service.Createtaskservice(this.TaskGroup.value).subscribe({
+        next: (res: any) => {
+          this.TaskRecord = res;
+          this.getTaskRecord();
+        },
+        error: (err: any) => {
+          console.log(err);
+        },
+      });
+      this.getTaskRecord();
+      this.notify.showSuccess('Send Successfully', 'Task');
+      this.TaskGroup.reset();
+    }
+
   }
   // view taskCard Details
   ViewTaskDataInModal() {
@@ -105,7 +124,7 @@ export class HomeComponent
   // show modal fun
   ShowModal() {
     $('#myModal').modal('show');
-    this.Time = this.getCurrentTime();
+    this.time = this.getCurrentTime();
   }
 
   // Time funtionality
@@ -227,7 +246,7 @@ this.router.navigate(['dashboard/View'])
   }
 
   colorChangeFunction() {
-    debugger;
+
     console.log('have data1 conchecked');
     if (this.filteredData.length > 0) {
       this.filteredData.filter((item) => {
