@@ -12,6 +12,12 @@ import { Router } from '@angular/router';
 import { DbserviceService } from 'src/app/service/dbservice.service';
 import { NotifyService } from 'src/app/service/notify.service';
 import { StorageService } from 'src/app/service/storage.service';
+import {
+  ConfirmBoxInitializer,
+  DialogLayoutDisplay,
+  DisappearanceAnimation,
+  AppearanceAnimation
+} from '@costlydeveloper/ngx-awesome-popup';
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -28,7 +34,8 @@ export class HomeComponent
     private service: DbserviceService,
     private notify: NotifyService,
     private sessionStorage: StorageService,
-    private router:Router
+    private router:Router,
+  
   ) {}
   time: any;
   TaskGroup!: FormGroup;
@@ -94,7 +101,7 @@ if(txtBox){
 $("#textArea").addClass('borderStyle')
 $("#tittle").addClass('borderStyle')
 $("#To").addClass('borderStyle')
-$('#myModal').modal("hide");
+
   
 }
 else{
@@ -105,6 +112,7 @@ else{
       this.service.Createtaskservice(this.TaskGroup.value).subscribe({
         next: (res: any) => {
           this.TaskRecord = res;
+          $('#myModal').modal("hide");
           this.getTaskRecord();
         },
         error: (err: any) => {
@@ -269,4 +277,49 @@ this.router.navigate(['dashboard/View'])
       });
     }
   }
+
+  deleteTask(id: number) {
+  
+      // standard typescript method.
+  
+        const newConfirmBox = new ConfirmBoxInitializer();
+
+        newConfirmBox.setTitle('Are You Sure?');
+        newConfirmBox.setMessage('Are You Sure To Delete This ');
+
+        // Choose layout color type
+        newConfirmBox.setConfig({
+        layoutType: DialogLayoutDisplay.SUCCESS, // SUCCESS | INFO | NONE | DANGER | WARNING
+        animationIn: AppearanceAnimation.BOUNCE_IN, // BOUNCE_IN | SWING | ZOOM_IN | ZOOM_IN_ROTATE | ELASTIC | JELLO | FADE_IN | SLIDE_IN_UP | SLIDE_IN_DOWN | SLIDE_IN_LEFT | SLIDE_IN_RIGHT | NONE
+        animationOut: DisappearanceAnimation.BOUNCE_OUT, // BOUNCE_OUT | ZOOM_OUT | ZOOM_OUT_WIND | ZOOM_OUT_ROTATE | FLIP_OUT | SLIDE_OUT_UP | SLIDE_OUT_DOWN | SLIDE_OUT_LEFT | SLIDE_OUT_RIGHT | NONE
+        buttonPosition: 'right', // optional 
+        // optional 
+        width: '350px', // optional 
+        });
+
+        newConfirmBox.setButtonLabels('Yes', 'No');
+
+        // Simply open the popup and observe button click
+        newConfirmBox.openConfirmBox$().subscribe(resp => {
+          if(resp.clickedButtonID){
+            console.log('Button clicked: ', resp.clickedButtonID);
+            this.Delete(id)
+          
+          }
+        });
+    
+  
+  }
+
+Delete(id:any){
+  this.service.DeleteTask(id).subscribe({
+    next:(res)=>{
+
+    },
+    error:(err)=>{
+      console.log(`Delete Task Home ${err}`);
+      
+    }
+  })
+}
 }

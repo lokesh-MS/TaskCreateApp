@@ -9,7 +9,8 @@
     
     
     <div  *ngFor="let arrdata of reverArr">
-      <div id="crd" *ngIf="arrdata.send_To==userName">
+    
+      <div id="crd" *ngIf="arrdata.send_To==userName && arrdata.status!='c'">
         <p><span id="time">{{arrdata.time}}</span></p> 
         <i class='bx bx-message-alt-x'></i>
         <div id="detailsDiv" (click)="ViewTask(arrdata.id)">

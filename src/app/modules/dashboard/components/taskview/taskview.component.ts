@@ -25,10 +25,12 @@ ngOnInit(): void {
   try{
     debugger
   await  this.service.GetSingleTask(id).subscribe({
-      next:(res=>{
+      next:((res:any)=>{
   this.singleData.push(res)
   console.log(this.singleData);
-
+  let obj=res
+  obj.is_Opened="yes"
+this.service.EditTask(id,obj).subscribe()
       }),
       error:(err=>{
   
@@ -57,23 +59,31 @@ commentShowFun(){
 onCheckboxChange(event: any,Id:any) {
   // Handle checkbox change here
   debugger
-let Obj=this.singleData[0]
-   console.log(Obj); 
-  
-  if (event.target.checked) {
-    Obj.status="p"
-    console.log('Checkbox is checked');
-    this.service.EditTask(Id,Obj).subscribe({
-      next:(res)=>{
-
-      },
-      error:(err)=>{
-
-      }
-    })
-  } else {
-    console.log('Checkbox is unchecked');
+  try{
+    let Obj=this.singleData[0]
+    console.log(Obj); 
+   
+   if (event.target.checked) {
+     Obj.status="p"
+     console.log('Checkbox is checked');
+     this.service.EditTask(Id,Obj).subscribe({
+       next:(res)=>{
+ console.log(res);
+ 
+       },
+       error:(err)=>{
+//  console.log(err);
+ 
+       }
+     })
+   } else {
+     console.log('Checkbox is unchecked');
+   }
   }
+catch(err){
+  console.log(`Catch Error:-${err}`);
+  
+}
 }
 GoBack(){
   // this.router.navigateByUrl('TaskList')

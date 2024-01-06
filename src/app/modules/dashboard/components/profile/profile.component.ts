@@ -19,10 +19,11 @@ ngOnInit(): void {
     FirstName:['',Validators.required],
     LastName :['',Validators.required],
     UserName:['',Validators.required],
+    User_Img:[''],
     Gender :['',Validators.required],
      Date_Of_Birth :['',Validators.required],
-     Address :['',Validators.required],
-     Street_Address :['',Validators.required],
+     permanent_Address :['',Validators.required],
+     current_Address :['',Validators.required],
      City :['',Validators.required],
      State :['',Validators.required],
      Email :['',Validators.required],
@@ -38,9 +39,12 @@ postUserInfo(){
 // debugger
 try{
   this.userInfoGroup.value.UserName=this.storageService.GetUser();
+  this.userInfoGroup.value.User_Img=this.imageUrl;
   let userInfoData=this.userInfoGroup.value
+ 
   this.service.PostUserInfo(userInfoData).subscribe({
   next:(res=>{
+    this.imgUpload(this.selectedFile);
   this.notify.showSuccess("created Successfully","Record!!!")
   this.userInfoGroup.reset();
   }),
@@ -56,5 +60,61 @@ catch(err){
 }
 
 }
+// imagesrc ="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg";
+// selectedFile:any;
+// imgUpload (event:any) {
+//   debugger
+//   var image:HTMLElement|any = document.getElementById("output");
+//  let img= event.target.files[0].name;
+//  this.selectedFile = event.target.files[0] as File;
+//   // image.src = URL.createObjectURL(event.target.files[0]);
+
+//   this.imagesrc=this.selectedFile.name
+// };
+imageUrl: string="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg";
+selectedFile:any;
+formData = new FormData();
+loadFile(event: any): void {
+  const image: HTMLImageElement = document.getElementById("output") as HTMLImageElement;
+
+  if (event) {
+
+    this.selectedFile=  event.target.files[0] as File;
+
+    this.formData.append("File", this.selectedFile);
+
+  
+}
+ 
+  // Assuming you're using Angular's change detection
+  this.imageUrl = URL.createObjectURL(event.target.files[0]);
+console.log(this.imageUrl);
+
+  // If not using Angular's change detection, use NgZone to trigger change detection
+  // import { NgZone } from '@angular/core';
+  // this.ngZone.run(() => {
+  //   this.imageUrl = URL.createObjectURL(event.target.files[0]);
+  // });
+}
+imgUpload(img:any){
+  debugger
+  let FileNameData:any;
+  console.log(this.formData.get('File'));
+
+   
+  this.service.FileUpload(this.formData).subscribe({
+    next:(res)=>{
+console.log(`File Upload Seccessfully! ${res}`);
+
+    },
+    error:(err)=>{
+      console.log(`Error File Upload! `);
+      
+    }
+    
+  })
+  this.formData.delete('File');
+}
+
 
 }

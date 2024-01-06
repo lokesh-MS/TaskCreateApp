@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,46 +9,59 @@ export class DbserviceService {
   constructor( private http:HttpClient) { }
 // url
 LoginUrl='https://localhost:7205/api/Login/authenticate';
+
+OfficeUrl='http://192.168.0.180:8034/api/'  //UserInfo
+FileUploadUrl='https://localhost:7205/UploadFile';
+FileDownloadUrl='https://localhost/ReportWebApi/DownloadFile?filename='
+publicIp='http://125.20.158.150/TASKAPI/api/'//userinfo
 BaseUrl='https://125.20.158.150/TASKAPI/api/';
-// myLocalIIS_URL='https://localhost:7205/api/';
 myLocalIIS_URL='http://localhost/TaskApi/api/';
-//  SignupUrl='https://localhost/ReportWebApi/signUp';http://localhost/ReportWebApi/api/UserInfo
- SignupUrl='https://localhost:7205/api/signUp';
-// BaseUrl='https://localhost:7205/api/Task';
-userInfo='https://localhost:7205/api/'
-//  GetTaskRecordsUrl='https://localhost:7205/api/Task'
-pradeepUrl='https://localhost:7282/api/Country'
-// 
+
   LoginService(userData:any){
-    return this.http.post(this.myLocalIIS_URL+'Login/authenticate',userData);
+    return this.http.post(this.publicIp+'Login/authenticate',userData);
   }
   SignUpService(userData:any){
-    return this.http.post(this.myLocalIIS_URL+'signUp',userData);
+    return this.http.post(this.publicIp+'signUp',userData);
   }
   Createtaskservice(TaskData:any){
-    return this.http.post(this.myLocalIIS_URL+'task',TaskData);
+    return this.http.post(this.publicIp+'task',TaskData);
   }
   getTaskService(){
-    // return this.http.get(this.myLocalIIS_URL+'task')
-    return this.http.get('http://localhost/TaskApi/api/task')
-  }
-  EditTask(id:any,data:any){
     debugger
-    return this.http.put(this.myLocalIIS_URL+'task/'+id,data)
+     return this.http.get(this.publicIp+'task')
+    // return this.http.get('http://localhost/TaskApi/api/task')
+  }
+  EditTask(id:any,data:object){
+    debugger
+    return this.http.put(this.publicIp+'task/'+id,data)
+  }
+  DeleteTask(id:any){
+return this.http.delete(this.publicIp+'task/'+id)
   }
   GetSingleTask(id:any){
-    return this.http.get(this.myLocalIIS_URL+'task/'+id)
+    return this.http.get(this.publicIp+'task/'+id)
   }
 PostUserInfo(data:any){
   debugger
-return this.http.post(this.myLocalIIS_URL+'UserInfo',data)
+return this.http.post(this.publicIp+'UserInfo',data)
 }
 GetUsersInfo(){
-  return this.http.get(this.myLocalIIS_URL+'UserInfo')
+  return this.http.get(this.publicIp+'UserInfo')
 }
 GetUserInfo(id:any){
   debugger
-  return this.http.get(this.myLocalIIS_URL+'UserInfo/'+id)
+  return this.http.get(this.publicIp+'UserInfo/'+id)
 }
+FileUpload(data: any) {
+  debugger
+  console.log( data);
+  return this.http.post(this.FileUploadUrl,data,{responseType: 'text'});
 
+}
+downloadFile(filename: string): Observable<Blob> {
+  const url = `${this.FileDownloadUrl}${filename}`;
+
+  // Set the responseType to 'blob' to handle binary data
+  return this.http.get(url, { responseType: 'blob' });
+}
 }

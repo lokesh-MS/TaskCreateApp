@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
   // Login method
 
   loginMethod() {
-    debugger;
+   localStorage.clear()
     console.log(this.loginGroup.value);
     if (this.loginGroup.value.username == '') {
       let userNameInput = this.el.nativeElement.querySelector('#userId');
@@ -84,12 +84,17 @@ export class LoginComponent implements OnInit {
       next: (res: any) => {
         this.storage.StoreToken(res.token);
         this.storage.StoreUser(res.username);
+        localStorage.setItem('userName',res.username)
         this.notify.showSuccess('LoginSuccessfully', 'Login!');
         this.router.navigate(['/dashboard']);
       },
       error: (err: any) => {
         console.log(err.error.message);
         this.notify.showError(err.error.message, 'Login!');
+        let userNameInput = this.el.nativeElement.querySelector('#userId');
+        this.renderer.setStyle(userNameInput, 'border-color', 'red');
+        let PasswordInput = this.el.nativeElement.querySelector('#pwd');
+        this.renderer.setStyle(PasswordInput, 'border-color', 'red');
       },
     });
   }

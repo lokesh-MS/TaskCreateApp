@@ -15,7 +15,7 @@ constructor(private service:DbserviceService,private http:HttpClient,private rou
 
 }
 TaskRecord=new Array<any>();
-filteredData: any=[];
+filteredData= new Array<any>();
 reverArr:any=[]
 userName:any;
 ngOnInit(): void {
@@ -25,11 +25,14 @@ ngOnInit(): void {
 }
 ngDoCheck(): void {
   // console.log(this.TaskRecord);
+  this.userName= this.Storage.GetUser()
   this.reverArr= this.filteredData.slice().reverse();
 }
+notifyCount:any=0;
 GetAllTaskRecords(){
 
   try{
+    let C=0;
     this.service.getTaskService().subscribe({
       next:(res:any)=>{
         this.TaskRecord=res;
@@ -38,12 +41,14 @@ GetAllTaskRecords(){
           const endOfDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1);
           
           setTimeout(() => {
+            debugger
             this.filteredData = this.TaskRecord.filter((item:any) => {
-              // debugger
               const itemDate = new Date(item.task_Assign_Time);
               return itemDate >= startOfDay && itemDate < endOfDay;
             });
-          }, 200);
+      console.log(this.notifyCount);
+      
+          }, 100);
       },
       error:(err:any)=>{
         console.log(err);
@@ -59,6 +64,7 @@ console.log(`Catch Error:-${err}`);
 }
 
 ViewTask(id:any){
+
   this.router.navigate(['dashboard/TaskView']);
  this.Storage.StoreTaskId(id);
 }

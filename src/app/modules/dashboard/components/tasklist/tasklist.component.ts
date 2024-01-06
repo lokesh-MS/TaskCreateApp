@@ -28,6 +28,7 @@ this.StorageService.StoreTaskId(Inx)
     this.route.navigate(['dashboard/View'])
   }
   getTaskRecord(){
+    debugger
     let user=this.StorageService.GetUser();
     try{
       this.service.getTaskService().subscribe({
@@ -35,7 +36,7 @@ this.StorageService.StoreTaskId(Inx)
   console.log(res);
   this.TaskRecord=res;
            this.TaskRecord.filter((item:any)=>{
-            if(user==item.send_To && item.status=="C"){
+            if(user==item.send_To && item.status=="c"){
               this.userArray.push(item)
             }
            })

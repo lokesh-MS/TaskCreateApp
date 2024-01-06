@@ -1,55 +1,59 @@
 <div>
-  <button class="button-87" role="button" (click)="createAndAppendElement()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Create</span></button>
+  <button class="button-87" role="button" (click)="createAndAppendElement()" style="float: right;"><span
+      style="display: flex; align-items: center;" class="text">Create</span></button>
   <!-- <button class="button-64" role="button" (click)="SendTask()" style="float: right;"><span style="display: flex; align-items: center;" class="text">Assign Task</span></button> -->
 </div>
 
-  
-  <!-- style="display: flex; justify-content: space-between;" -->
+
+<!-- style="display: flex; justify-content: space-between;" -->
 <div class="line">
   <h1>
     <!-- TODAY<span> & </span>TASK -->
-    <hr /></h1>
+    <hr />
+  </h1>
 </div>
-<div id="cardDiv" >
-  <div   *ngFor="let arrdata of filteredData"  style="position: relative;" >
- 
-    <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd" [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}" >
- 
+<div id="cardDiv">
+  <div *ngFor="let arrdata of filteredData" style="position: relative;">
+
+    <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd"
+      [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}">
+
       <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
-      <i class='bx bx-message-alt-x'></i>
+      <i class='bx bx-message-alt-x' (click)="deleteTask(arrdata.id)"></i>
       <div *ngIf="arrdata==null">
-        <i class='bx bx-plus'  (click)="ShowModal()"></i>
+        <i class='bx bx-plus' (click)="ShowModal()"></i>
       </div>
       <div id="detailsDiv">
-        <p id="sendTo"><span class="spanCard">Name:-</span>{{arrdata.send_To}}</p>
-        <p id="Tittle"><span class="spanCard">Tittle:-</span>{{arrdata.tittle}}</p>
-  
+        <p id="sendTo"><span>Name:- <span>{{arrdata.send_To}}</span></span></p>
+        <p id="Tittle"><span>Tittle:- <span>{{arrdata.tittle}}</span></span></p>
+
       </div>
       <div>
-        <button class="btn btn-success" *ngIf="arrdata.status!='c' && arrdata.status!='p' " (click)="EditTask(arrdata.id)">Edit</button>
+        <button class="btn btn-success" *ngIf="arrdata.status!='c' && arrdata.status!='p' "
+          (click)="EditTask(arrdata.id)">Edit</button>
       </div>
-  
+
       <div>
         <button class="btn btn-d" (click)="ReadTaskrecord(arrdata.id)">View</button>
       </div>
-    
-     
-     
+
+
+
     </div>
 
 
 
 
+  </div>
 </div>
-</div>
 
 
 
 
-  <!-- Modal popup for create task-->
+<!-- Modal popup for create task-->
 
- <!-- Modal -->
- <div class="modal fade" id="myModal" role="dialog">
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -62,37 +66,42 @@
         <!-- <p>This is a small modal.</p> -->
         <form [formGroup]="TaskGroup">
           <div style="display: flex; width: 100%; justify-content: space-between;">
-          <div style="width: 44%;">
-            <div class="form-floating mb-3 mt-3 ">
-              <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..." autocomplete="off" formControlName="Send_To" name="SendTo">
-              <label for="To">*To...</label>
+            <div style="width: 44%;">
+              <div class="form-floating mb-3 mt-3 ">
+                <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..."
+                  autocomplete="off" formControlName="Send_To" name="SendTo">
+                <label for="To">*To...</label>
+              </div>
             </div>
-          </div>
-          <!-- second 50% -->
-          <div style="width: 55%;">
-            
-          <div class="form-floating mb-3 mt-3 ">
-            <input type="text" class="form-control form-control-sm" id="tittle" placeholder="Enter..." autocomplete="off" formControlName="Tittle" name="Des">
-            <label for="tittle">*Tittle...</label>
-          </div>
-          </div>
-        
+            <!-- second 50% -->
+            <div style="width: 55%;">
+
+              <div class="form-floating mb-3 mt-3 ">
+                <input type="text" class="form-control form-control-sm" id="tittle" placeholder="Enter..."
+                  autocomplete="off" formControlName="Tittle" name="Des">
+                <label for="tittle">*Tittle...</label>
+              </div>
+            </div>
+
           </div>
 
           <div class="form-floating mb-3 mt-3 ">
-            <input type="text" class="form-control form-control-sm" id="des" placeholder="Enter..." autocomplete="off" formControlName="Description" name="Des">
+            <input type="text" class="form-control form-control-sm" id="des" placeholder="Enter..." autocomplete="off"
+              formControlName="Description" name="Des">
             <label for="To">Description...</label>
           </div>
           <div class=" mb-3 mt-3 form-floating ">
-            <textarea class="form-control form-control-sm" id="textArea" style="height: 150px;" placeholder="Enter..." cols="50" autocomplete="off" formControlName="Message" name="Message"></textarea>
-              <label for="des">*Type Here...</label>
-            </div>
-      
+            <textarea class="form-control form-control-sm" id="textArea" style="height: 150px;" placeholder="Enter..."
+              cols="50" autocomplete="off" formControlName="Message" name="Message"></textarea>
+            <label for="des">*Type Here...</label>
+          </div>
+
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" id="modaleCRBtn" class="btn btn-default" (click)="CraeteTask()" >Create</button>
-        <button type="button" id="modaleUPBtn" class="btn btn-default" (click)="Update()" data-bs-dismiss="modal">Update</button>
+        <button type="button" id="modaleCRBtn" class="btn btn-default" (click)="CraeteTask()">Create</button>
+        <button type="button" id="modaleUPBtn" class="btn btn-default" (click)="Update()"
+          data-bs-dismiss="modal">Update</button>
       </div>
     </div>
   </div>

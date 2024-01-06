@@ -30,7 +30,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,ReactiveFormsModule,FormsModule
-  ]
+    DashboardRoutingModule,ReactiveFormsModule,FormsModule,
+  ],
+  providers:[NotificationComponent]
 })
 export class DashboardModule { }

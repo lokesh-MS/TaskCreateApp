@@ -6,6 +6,15 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+#count{
+  color: yellow;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: initial;
+  background: #0c6a8d;
+  padding: 3px 8px;
+  border-radius: 50%;
+}
 .sidebar {
   position: fixed;
   left: 0;
