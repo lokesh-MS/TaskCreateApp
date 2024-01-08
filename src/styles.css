@@ -23,12 +23,27 @@ body{
     margin: 0;
   }
   .bx-message-alt-x{    
-    font-size: 16px;
+    font-size: 21px;
     color: red;
     cursor: pointer;
     top: 3px;
     position: absolute;
     right: 7px;
+  }
+  .bxs-badge-check{
+    font-size: 26px;
+    float: right;
+    /* right: 2px; */
+    position: absolute;
+    color: #0bb70b;
+  }
+  .bx-info-circle{
+    font-size: 20px;
+    color: #c89302d1;
+    right: 10px ;
+    position: absolute;
+    font-weight: 500;
+
   }
   @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';

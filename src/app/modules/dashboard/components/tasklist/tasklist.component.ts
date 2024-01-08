@@ -22,13 +22,13 @@ export class TasklistComponent implements OnInit{
 
   // 
   ViewTask(Inx:any){
-    debugger
+  
 this.StorageService.StoreTaskId(Inx)
 
     this.route.navigate(['dashboard/View'])
   }
   getTaskRecord(){
-    debugger
+   
     let user=this.StorageService.GetUser();
     try{
       this.service.getTaskService().subscribe({

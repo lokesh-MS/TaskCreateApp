@@ -27,12 +27,12 @@ myLocalIIS_URL='http://localhost/TaskApi/api/';
     return this.http.post(this.publicIp+'task',TaskData);
   }
   getTaskService(){
-    debugger
+    
      return this.http.get(this.publicIp+'task')
     // return this.http.get('http://localhost/TaskApi/api/task')
   }
   EditTask(id:any,data:object){
-    debugger
+    
     return this.http.put(this.publicIp+'task/'+id,data)
   }
   DeleteTask(id:any){
@@ -42,18 +42,18 @@ return this.http.delete(this.publicIp+'task/'+id)
     return this.http.get(this.publicIp+'task/'+id)
   }
 PostUserInfo(data:any){
-  debugger
+  
 return this.http.post(this.publicIp+'UserInfo',data)
 }
 GetUsersInfo(){
   return this.http.get(this.publicIp+'UserInfo')
 }
 GetUserInfo(id:any){
-  debugger
+  
   return this.http.get(this.publicIp+'UserInfo/'+id)
 }
 FileUpload(data: any) {
-  debugger
+  
   console.log( data);
   return this.http.post(this.FileUploadUrl,data,{responseType: 'text'});
 

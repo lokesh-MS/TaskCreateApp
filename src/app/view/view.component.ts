@@ -41,6 +41,6 @@ console.log(`Catch Error:-${err}`);
 }
 
 GoBack(){
-this.router.navigateByUrl("dashboard/home")
+this.router.navigateByUrl("dashboard")
 }
 }

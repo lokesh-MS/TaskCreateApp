@@ -302,8 +302,15 @@ this.router.navigate(['dashboard/View'])
         // Simply open the popup and observe button click
         newConfirmBox.openConfirmBox$().subscribe(resp => {
           if(resp.clickedButtonID){
-            console.log('Button clicked: ', resp.clickedButtonID);
-            this.Delete(id)
+
+            if(resp.clickedButtonID=='yes'){
+              console.log('Button clicked: ', resp.clickedButtonID);
+              this.Delete(id)
+
+            }
+           else{
+            return
+           }
           
           }
         });
@@ -314,7 +321,7 @@ this.router.navigate(['dashboard/View'])
 Delete(id:any){
   this.service.DeleteTask(id).subscribe({
     next:(res)=>{
-
+  this.getTaskRecord();
     },
     error:(err)=>{
       console.log(`Delete Task Home ${err}`);

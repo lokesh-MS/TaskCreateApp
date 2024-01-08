@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DbserviceService } from 'src/app/service/dbservice.service';
+import { NotifyService } from 'src/app/service/notify.service';
 import { StorageService } from 'src/app/service/storage.service';
 declare var $:any;
 @Component({
@@ -9,7 +10,7 @@ declare var $:any;
   styleUrls: ['./taskview.component.css']
 })
 export class TaskviewComponent implements OnInit{
-constructor(private service:DbserviceService,private router:Router ,private StorageService:StorageService){
+constructor(private service:DbserviceService,private router:Router ,private StorageService:StorageService,private notify:NotifyService){
 
 }
 singleData=new Array<any>();
@@ -69,6 +70,7 @@ onCheckboxChange(event: any,Id:any) {
      this.service.EditTask(Id,Obj).subscribe({
        next:(res)=>{
  console.log(res);
+ this.notify.showInfo("Added To Process","Task")
  
        },
        error:(err)=>{
@@ -86,20 +88,28 @@ catch(err){
 }
 }
 GoBack(){
+  debugger
   // this.router.navigateByUrl('TaskList')
   this.router.navigate(["dashboard/Notification"])
   console.log('cls');
   
 }
+textareaValue: string = '';
 
 Complete(Id:any){
   try{
+    debugger
+  let comVal=  document.getElementById('addcomment')?.innerHTML
+  console.log(this.textareaValue);
+  
     let Obj=this.singleData[0]
     Obj.status="c"
+    Obj.User_Note=this.textareaValue;
     this.service.EditTask(Id,Obj).subscribe({
       next:(res)=>{
   console.log(res);
-  
+  this.notify.showSuccess("Completed Successfully!","Task")
+  this.router.navigate(['dashboard/create'])
       },
       error:(err)=>{
         console.log(err);

@@ -90,11 +90,18 @@ export class LoginComponent implements OnInit {
       },
       error: (err: any) => {
         console.log(err.error.message);
-        this.notify.showError(err.error.message, 'Login!');
-        let userNameInput = this.el.nativeElement.querySelector('#userId');
-        this.renderer.setStyle(userNameInput, 'border-color', 'red');
-        let PasswordInput = this.el.nativeElement.querySelector('#pwd');
-        this.renderer.setStyle(PasswordInput, 'border-color', 'red');
+        if(err.error.message=="" || err.error.message==null){
+          this.notify.showInfo("Pleace Check Your Service","Login Failed")
+        }
+        else{
+          this.notify.showError(err.error.message ,'Login')
+        }
+        
+      
+        // let userNameInput = this.el.nativeElement.querySelector('#userId');
+        // this.renderer.setStyle(userNameInput, 'border-color', 'red');
+        // let PasswordInput = this.el.nativeElement.querySelector('#pwd');
+        // this.renderer.setStyle(PasswordInput, 'border-color', 'red');
       },
     });
   }

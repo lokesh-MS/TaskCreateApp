@@ -6,12 +6,19 @@
         <h6 class="tittle">Tittle:- <span>{{data.tittle}}</span></h6>
         <div style="width: 70%;border-right: 2px solid;padding: 0px 15px; min-height: 45vh;" >
           
-    <div class="checkbox-wrapper-40">
+    <div class="checkbox-wrapper-40" *ngIf="data.status=='p'">
+      <label>
+        <input type="checkbox" checked />
+        <span class="checkbox"></span>
+      </label>
+    </div>
+    <div class="checkbox-wrapper-40" *ngIf="data.status!='p' && data.stage3!='c'">
       <label>
         <input type="checkbox" (click)="onCheckboxChange($event,data.id)"/>
         <span class="checkbox"></span>
       </label>
     </div>
+
             <p id="time">Time: <span>{{data.time}}</span> </p>
             
             <h2 class="note">INFO:-</h2>
@@ -21,7 +28,7 @@
         </div>
         <div style="width: 30%;position: relative; padding: 0%;" >
         
-        <textarea name="addcomment" id="addcomment" style="display: none;" placeholder="Enter Your Points..." cols="46" rows="7" ></textarea>
+        <textarea name="addcomment" [(ngModel)]="textareaValue" id="addcomment" style="display: none;" placeholder="Enter Your Points..." cols="46" rows="7" ></textarea>
        
       <!-- btn div -->
   <div class="buttonDiv">

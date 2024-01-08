@@ -17,9 +17,9 @@
 
     <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd"
       [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}">
-
-      <!-- <i class='bx bx-bookmark-alt-plus'  ></i> -->
-      <i class='bx bx-message-alt-x' (click)="deleteTask(arrdata.id)"></i>
+      <i class='bx bxs-badge-check' *ngIf="arrdata.status=='c'"></i>
+      <i class='bx bx-info-circle' *ngIf="arrdata.status=='p'" ></i>
+      <i class='bx bx-message-alt-x' *ngIf="arrdata.status==null " (click)="deleteTask(arrdata.id)"></i>
       <div *ngIf="arrdata==null">
         <i class='bx bx-plus' (click)="ShowModal()"></i>
       </div>
@@ -28,6 +28,7 @@
         <p id="Tittle"><span>Tittle:- <span>{{arrdata.tittle}}</span></span></p>
 
       </div>
+    
       <div>
         <button class="btn btn-success" *ngIf="arrdata.status!='c' && arrdata.status!='p' "
           (click)="EditTask(arrdata.id)">Edit</button>
@@ -36,7 +37,6 @@
       <div>
         <button class="btn btn-d" (click)="ReadTaskrecord(arrdata.id)">View</button>
       </div>
-
 
 
     </div>

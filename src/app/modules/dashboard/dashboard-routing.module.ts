@@ -11,7 +11,7 @@ import { ViewComponent } from 'src/app/view/view.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
-    {path:'home',component:HomeComponent},
+    {path:'create',component:HomeComponent},
     {path:'TaskView',component:TaskviewComponent},
     {path:'TaskList',component:TasklistComponent},
     {path:'Notification',component:NotificationComponent},

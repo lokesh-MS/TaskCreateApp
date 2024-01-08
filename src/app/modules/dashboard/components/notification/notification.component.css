@@ -1,6 +1,6 @@
 
 
-#crd{
+.crd{
 background-color: #006e7f0f;
     border: 1px dotted gray;
     width: 98%;
@@ -11,6 +11,9 @@ background-color: #006e7f0f;
 	margin-top: 10px;
 	cursor: pointer;
     animation: myAnim 2s ease 0s 1 normal forwards;
+}
+.newMsgStyle{
+	background-color: #006e7f33 !important;
 }
 #detailsDiv{
 	position: relative;
