@@ -8,12 +8,16 @@ import { NotificationComponent } from './components/notification/notification.co
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ViewComponent } from 'src/app/view/view.component';
+import { PendingListComponent } from './components/pending-list/pending-list.component';
+import { TotalRecordsComponent } from './components/total-records/total-records.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
     {path:'create',component:HomeComponent},
+    {path:'pendingList',component:PendingListComponent},
     {path:'TaskView',component:TaskviewComponent},
     {path:'TaskList',component:TasklistComponent},
+    {path:'TotalRecords',component:TotalRecordsComponent},
     {path:'Notification',component:NotificationComponent},
     {path:'profile',component:ProfileComponent},
     {path:'userInfo',component:UserInfoComponent},

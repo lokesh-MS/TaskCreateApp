@@ -15,14 +15,28 @@ ngOnInit(): void {
   let closeBtn = this.el.nativeElement.querySelector('#btn');
   let sidebar = this.el.nativeElement.querySelector('.sidebar');
   let searchBtn =  this.el.nativeElement.querySelector(".bx-search");
+  this.PendingCount=  localStorage.getItem('pendingCount')
 
+ this.Role= localStorage.getItem('Role')
+  this.completedCount=  localStorage.getItem('completedCount')
+ if(this.PendingCount==null){
+  this.PendingCount=0
+  this.completedCount=0
+ }
+ 
 }
 userName:any
-
+PendingCount:any=0;
+completedCount:any=0;
 notiCount:any=0;
+Role:any;
 ngDoCheck(): void {
   this.userName= this.sessionStorage.GetUser();
-
+  this.PendingCount=  localStorage.getItem('pendingCount')
+  if(this.PendingCount==null){
+    this.PendingCount=0
+    this.completedCount=0
+   }
   this.notiCount= localStorage.getItem('NCount')
   if(  this.notiCount==null){
     this.notiCount=0

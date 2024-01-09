@@ -3,7 +3,7 @@
 <div class="details">
   
       <div class="row" *ngFor="let data of singleData;"  >
-        <h6 class="tittle">Tittle:- <span>{{data.tittle}}</span></h6>
+        <h6 class="title"><span id="from">{{data.created_By}}</span>Title:- <span id="title">{{data.tittle}}</span></h6>
         <div style="width: 70%;border-right: 2px solid;padding: 0px 15px; min-height: 45vh;" >
           
     <div class="checkbox-wrapper-40" *ngIf="data.status=='p'">

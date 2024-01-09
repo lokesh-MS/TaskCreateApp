@@ -1,0 +1,28 @@
+
+<div class="line" >
+   
+    <!-- TODAY<span> & </span>TASK -->
+    <p  style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">Pending Work</p>
+    <hr />
+  </div>
+ 
+  
+  
+  <div  *ngFor="let data of filterData">
+  
+    <div id="crd{{data.id}}" class="crd" *ngIf="data.send_To==userName && data.status!='c'">
+      <p><span id="time">{{data.time}}</span></p> 
+      <!-- <i class='bx bx-message-alt-x'></i> -->
+      <i class='bx bx-bell'></i>
+      <div id="detailsDiv" (click)="ViewTask(data.id)">
+        <p id="sendTo"><i class='bx bxs-user-voice'></i><span class="data">{{data.created_By}}</span></p>
+        <p id="Title" ><span >Title:-</span><span class="data">{{data.tittle}}</span ></p>
+   
+       
+      </div>
+
+
+    </div>
+   
+  </div>
+  

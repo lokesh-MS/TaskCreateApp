@@ -9,7 +9,7 @@ export class DbserviceService {
   constructor( private http:HttpClient) { }
 // url
 LoginUrl='https://localhost:7205/api/Login/authenticate';
-
+exportExcelUrl='https://localhost:7205/api/Task/export'
 OfficeUrl='http://192.168.0.180:8034/api/'  //UserInfo
 FileUploadUrl='https://localhost:7205/UploadFile';
 FileDownloadUrl='https://localhost/ReportWebApi/DownloadFile?filename='
@@ -63,5 +63,9 @@ downloadFile(filename: string): Observable<Blob> {
 
   // Set the responseType to 'blob' to handle binary data
   return this.http.get(url, { responseType: 'blob' });
+}
+
+ExportToExcel(){
+  return this.http.get(this.exportExcelUrl, { responseType: 'arraybuffer' })
 }
 }

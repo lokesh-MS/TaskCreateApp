@@ -1,0 +1,107 @@
+
+
+.crd{
+    background-color: #006e7f0f;
+        border: 1px dotted gray;
+        width: 98%;
+        margin: auto;
+        position: relative;
+        margin: auto;
+        /* height: 60px; */
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+        animation: myAnim 2s ease 0s 1 normal forwards;
+    }
+    #Title{
+        margin-top: -14px;
+    }
+    .crd:hover{
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    .newMsgStyle{
+        background-color: #006e7f33 !important;
+    }
+    #detailsDiv{
+        position: relative;
+    }
+    p:nth-child(1){
+        display: flex;
+    }
+    .bxs-user-voice{
+    
+        font-size: 26px;
+    }
+    .data{
+        font-size: 13px;
+    }
+    #time{
+        position: absolute;
+        right: 34px;
+        font-size: 11px;
+        font-weight: bold;
+        top: 4px;
+        color: cadetblue;
+    }
+    .bx-bell{
+        font-size: 21px;
+        color: #104d73;
+        cursor: pointer;
+        top: 3px;
+        position: absolute;
+        right: 7px;
+    }
+    @keyframes myAnim {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0;
+            transform: translateY(-250px);
+        }
+    
+        38% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        55% {
+            animation-timing-function: ease-in;
+            transform: translateY(-65px);
+        }
+    
+        72% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        81% {
+            animation-timing-function: ease-in;
+            transform: translateY(-28px);
+        }
+    
+        90% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        95% {
+            animation-timing-function: ease-in;
+            transform: translateY(-8px);
+        }
+    
+        100% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    }
+    
+    /* @keyframes myAnim {
+        0% {
+            transform: scale(0.5);
+        }
+    
+        100% {
+            transform: scale(1);
+        }
+    } */

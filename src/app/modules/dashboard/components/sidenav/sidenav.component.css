@@ -11,8 +11,8 @@
   font-size: 18px;
   font-weight: bold;
   font-family: initial;
-  background: #0c6a8d;
-  padding: 3px 8px;
+  /* background: #0c6a8d; */
+  padding: 0px 2px;
   border-radius: 50%;
 }
 .sidebar {
@@ -25,6 +25,7 @@
   width: 16%;
   /* background: #00B8A9; */
   /* background-color: #006E7F; */
+  /* background-color: #004D74; */
   background-color: #004D74;
   padding: 6px 14px;
   z-index: 99;

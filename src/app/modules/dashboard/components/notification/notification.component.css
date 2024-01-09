@@ -12,6 +12,10 @@ background-color: #006e7f0f;
 	cursor: pointer;
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
+.crd:hover{
+	cursor: pointer;
+	opacity: 0.5;
+}
 .newMsgStyle{
 	background-color: #006e7f33 !important;
 }
@@ -36,7 +40,14 @@ p:nth-child(1){
     top: 4px;
     color: cadetblue;
 }
-
+.bx-bell{
+	font-size: 21px;
+    color: #104d73;
+    cursor: pointer;
+    top: 3px;
+    position: absolute;
+    right: 7px;
+}
 /* @keyframes myAnim {
 	0% {
 		animation-timing-function: ease-in;

@@ -1,0 +1,116 @@
+
+<div class="row">
+
+    <select class="classic" (change)="onSelect($event)" style=" float: right;min-width: 300px; ">
+        <!-- <div *ngFor="let user of AllDetailsArr">
+       
+        <option value="{{user.id}}">{{user.userName}}</option>
+    </div> -->
+        <option value="">--Select User--</option>
+        <option *ngFor="let option of userNameArray" [value]="option.id">
+            {{ option.userName }}
+        </option>
+
+    </select>
+
+</div>
+
+<div class="row" style="margin: 0;">
+    <!-- <div class="outlayer" *ngFor="let data of CompletedRecordsArray"></div> -->
+
+ 
+    
+        <div class="container" style="width: 97%;">
+          <h2 class="mb-5">Total Records</h2>
+          
+    
+          <div class="table-responsive custom-table-responsive">
+            <!-- <i class='bx bxs-file-pdf' (click)="Export()"></i> -->
+            <i class='bx bx-export' (click)="Export()"></i>
+            <table class="table custom-table">
+            
+              <thead>
+                <tr>  
+    
+                  <th scope="col">
+                    <label class="control control--checkbox">
+                      <input type="checkbox"  class="js-check-all"/>
+                      <div class="control__indicator"></div>
+                    </label>
+<!--                               
+    <div class="checkbox-wrapper-40" >
+        <label>
+          <input type="checkbox" checked />
+          <span class="checkbox"></span>
+        </label>
+      </div> -->
+                  </th>
+                  
+                  <th scope="col">Order</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Project Name</th>
+                 
+                  <th scope="col">Work</th>
+                  <th scope="col">Records</th>
+                  <th scope="col">Date</th>
+
+                  <th scope="col">Assigned By</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr scope="row">
+                  <th scope="row">
+                    <label class="control control--checkbox">
+                      <input type="checkbox"/>
+                      <div class="control__indicator"></div>
+                    </label>
+                  </th>
+                  <td>
+                    1392
+                  </td>
+                  <td><a href="#">James Yates</a></td>
+                  <td>
+                    Web Designer
+                    <small class="d-block">Far far away, behind the word mountains</small>
+                  </td>
+                 
+                  <td>+63 983 0962 971</td>
+                  <td>63</td>
+                  <td>09-01-2023</td>
+                  <td>NY University</td>
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+                <tr>
+                  <th scope="row">
+                    <label class="control control--checkbox">
+                      <input type="checkbox"/>
+                      <div class="control__indicator"></div>
+                    </label>
+                  </th>
+                  
+                  <td>4616</td>
+                  <td><a href="#">Matthew Wasil</a></td>
+                  <td>
+                    Graphic Designer
+                    <small class="d-block">Far far away, behind the word mountains</small>
+                  </td>
+                 
+                  <td>+02 020 3994 929</td>
+                  <td>83</td>
+                  <td>09-01-2023</td>
+                  <td>London College</td>
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+             
+                
+              </tbody>
+            </table>
+          </div>
+    
+    
+        </div>
+    
+
+
+
+</div>

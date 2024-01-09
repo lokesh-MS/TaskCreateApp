@@ -21,16 +21,22 @@
 }
 .btn-success {
 
-  width: 78px;
+  width: 46%;
   height: 32px;
-  bottom: 0;
+  bottom: 0px;
   position: absolute;
-  right: 0px;
-  border-radius: 10px 0px 20px;
-  /* background-color: #006E7F !important; */
+  right: 37px;
+  border-radius: 5px 5px 10px 10px;
   background-color: #004D74 !important;
 }
-
+.bx-message-alt-x{    
+  font-size: 21px;
+  color:green !important;
+  cursor: pointer;
+  top: 3px;
+  position: absolute;
+  right: 7px;
+}
 .bx-bookmark-alt-plus {
   font-size: 24px;
   top: 10px;

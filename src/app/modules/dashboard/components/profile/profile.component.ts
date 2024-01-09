@@ -13,7 +13,19 @@ import { StorageService } from 'src/app/service/storage.service';
 export class ProfileComponent implements OnInit{
 constructor(private http:HttpClient,private fb:FormBuilder,private service:DbserviceService,private notify :NotifyService,private storageService:StorageService){}
 userInfoGroup!:FormGroup;
-
+RoleArray=[
+  {Role:'Admin',
+  RoleId:1
+},
+{
+  Role:'TL',
+  RoleId:2
+},
+{
+  Role:'Programer',
+  RoleId:3
+}
+];
 ngOnInit(): void {
   this.userInfoGroup=this.fb.group({
     FirstName:['',Validators.required],
@@ -116,5 +128,7 @@ console.log(`File Upload Seccessfully! ${res}`);
   this.formData.delete('File');
 }
 
+onSelect(e:any){
 
+}
 }

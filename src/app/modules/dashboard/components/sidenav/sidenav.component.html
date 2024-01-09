@@ -20,16 +20,16 @@
         </a>
         <span class="tooltip">Home </span>
       </li> -->
-      <li>
+      <li *ngIf="Role=='Admin' || Role=='TL'">
         <a routerLink="create">
           <!-- <i class='bx bx-grid-alt'></i> -->
           <!-- <i class='bx bx-home'></i> -->
           <!-- <i class='bx bxs-pencil'></i> -->
           <i class='bx bx-pencil' ></i>
-          <span class="links_name">Create</span>
+          <span class="links_name">Job Assign</span>
           <!-- <span class="links_name">Dashboard</span> -->
         </a>
-        <span class="tooltip">Create</span>
+        <span class="tooltip">Job Assign</span>
       </li>
     
   
@@ -45,7 +45,7 @@
         
        
       </li> -->
-      <li>
+      <li *ngIf="Role!='Programer' && Role!='TL'">
         <a routerLink="userInfo">
           <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
           <span class="links_name">Users</span>
@@ -74,20 +74,32 @@
         </a>
         <span class="tooltip">Analytics</span>
       </li> -->
+
+      <li>
+        <a routerLink="pendingList">
+          <!-- <i class='bx bx-folder'></i> -->
+          <i class='bx bx-folder-open' ></i>
+          <span class="links_name">pending  <span id="count">{{PendingCount}}</span></span>
+        </a>
+        <span class="tooltip">Incomplet List</span>
+      </li>
       <li>
         <a routerLink="TaskList">
-          <i class='bx bx-list-ol'></i>
-          <span class="links_name">Task List</span>
+          <!-- <i class='bx bx-list-ol'></i> -->
+          <i class='bx bx-list-check' ></i>
+          <span class="links_name">Completed <span  id="count">{{completedCount}}</span></span>
         </a>
-        <span class="tooltip">Task List</span>
+        <span class="tooltip">Completed List</span>
       </li>
-      <!-- <li>
-        <a routerLink="">
-          <i class='bx bx-folder'></i>
-          <span class="links_name">File Manager</span>
+      <li>
+        <a routerLink="TotalRecords">
+          <!-- <i class='bx bx-list-ol'></i> -->
+          <i class='bx bx-list-check' ></i>
+          <span class="links_name">Records</span>
         </a>
-        <span class="tooltip">Files</span>
-      </li> -->
+        <span class="tooltip">Records</span>
+      </li>
+   
    
       <li>
         <a routerLink="/admin/saved">
@@ -96,7 +108,7 @@
         </a>
         <span class="tooltip">Saved</span>
       </li>
-      <li>
+      <li *ngIf="Role!='programer'">
         <a routerLink="">
           <i class='bx bx-cog'></i>
           <span class="links_name">Setting</span>

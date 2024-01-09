@@ -12,6 +12,8 @@ import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { PendingListComponent } from './components/pending-list/pending-list.component';
+import { TotalRecordsComponent } from './components/total-records/total-records.component';
 
 
 
@@ -26,7 +28,9 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     TasklistComponent,
     NotificationComponent,
     ProfileComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    PendingListComponent,
+    TotalRecordsComponent
   ],
   imports: [
     CommonModule,
