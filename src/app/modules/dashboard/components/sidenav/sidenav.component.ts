@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StorageService } from 'src/app/service/storage.service';
 import { NotificationComponent } from '../notification/notification.component';
 import { AppearanceAnimation, ConfirmBoxInitializer, DialogLayoutDisplay, DisappearanceAnimation } from '@costlydeveloper/ngx-awesome-popup';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,19 +11,19 @@ import { AppearanceAnimation, ConfirmBoxInitializer, DialogLayoutDisplay, Disapp
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit , DoCheck{
-constructor(private router:Router,private el: ElementRef, private renderer: Renderer2, private sessionStorage:StorageService,private notifyCom:NotificationComponent){}
+constructor(private router:Router,private el: ElementRef, private renderer: Renderer2, private sessionStorage:StorageService,private notifyCom:NotificationComponent,private dashbord:DashboardComponent){}
 ngOnInit(): void {
   let closeBtn = this.el.nativeElement.querySelector('#btn');
   let sidebar = this.el.nativeElement.querySelector('.sidebar');
   let searchBtn =  this.el.nativeElement.querySelector(".bx-search");
-  this.PendingCount=  localStorage.getItem('pendingCount')
+
 
  this.Role= localStorage.getItem('Role')
-  this.completedCount=  localStorage.getItem('completedCount')
- if(this.PendingCount==null){
-  this.PendingCount=0
-  this.completedCount=0
- }
+  this.completedCount=  this.dashbord.completedCount
+//  if(this.PendingCount==null){
+//   this.PendingCount=0
+ 
+//  }
  
 }
 userName:any
@@ -31,17 +32,21 @@ completedCount:any=0;
 notiCount:any=0;
 Role:any;
 ngDoCheck(): void {
-  this.userName= this.sessionStorage.GetUser();
-  this.PendingCount=  localStorage.getItem('pendingCount')
-  if(this.PendingCount==null){
-    this.PendingCount=0
-    this.completedCount=0
-   }
-  this.notiCount= localStorage.getItem('NCount')
-  if(  this.notiCount==null){
-    this.notiCount=0
-  }
 
+  this.userName= this.sessionStorage.GetUser();
+  this.PendingCount=  localStorage.getItem('pendingCound')
+  // if(this.PendingCount==null){
+  //   this.PendingCount=0
+  //   this.completedCount=0
+  //  }
+  this.notiCount= localStorage.getItem('NCount')
+  // if(  this.notiCount==null){
+  //   this.notiCount=0
+  // }
+  this.completedCount=localStorage.getItem('completedCount')
+// if(this.completedCount==null){
+//   this.completedCount=0
+// }
 }
   // logout function
    
@@ -79,8 +84,7 @@ ngDoCheck(): void {
       // Simply open the popup and observe button click
       newConfirmBox.openConfirmBox$().subscribe(resp => {
         if(resp.clickedButtonID){
-          debugger
-
+        
           if(resp.clickedButtonID=='yes'){
             console.log('Button clicked: ', resp.clickedButtonID);
             this.LogOut()

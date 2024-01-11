@@ -18,8 +18,8 @@
     <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd"
       [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}">
       <!-- <i class='bx bxs-badge-check' *ngIf="arrdata.status=='c'"></i> -->
-      <i class='bx bx-badge-check'*ngIf="arrdata.status=='c'" ></i>
-      <i class='bx bx-info-circle' *ngIf="arrdata.status=='p'" ></i>
+      <i class='bx bx-badge-check' *ngIf="arrdata.status=='c'"></i>
+      <i class='bx bx-info-circle' *ngIf="arrdata.status=='p'"></i>
       <i class='bx bx-message-alt-x' *ngIf="arrdata.status==null " (click)="deleteTask(arrdata.id)"></i>
       <div *ngIf="arrdata==null">
         <i class='bx bx-plus' (click)="ShowModal()"></i>
@@ -29,7 +29,7 @@
         <p id="Tittle"><span>Tittle:- <span>{{arrdata.tittle}}</span></span></p>
 
       </div>
-    
+
       <div>
         <button class="btn btn-success" *ngIf="arrdata.status!='c' && arrdata.status!='p' "
           (click)="EditTask(arrdata.id)">Edit</button>
@@ -68,19 +68,53 @@
         <form [formGroup]="TaskGroup">
           <div style="display: flex; width: 100%; justify-content: space-between;">
             <div style="width: 44%;">
-              <div class="form-floating mb-3 mt-3 ">
+              <!-- <div class="form-floating mb-3 mt-3 ">
                 <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..."
                   autocomplete="off" formControlName="Send_To" name="SendTo">
                 <label for="To">*To...</label>
+              </div> -->
+              <!-- first select Box for To -->
+              <div include="form-input-select()">
+                <select required>
+                  <!--
+      This is how we can do "placeholder" options.
+      note: "required" attribute is on the select
+    -->
+    <option value="" >Select To</option>
+
+    <!-- normal options -->
+    <option value="{{User.userName}}" *ngFor="let User of UserNameDataArray"> {{ User.username }}</option>
+               
+                </select>
               </div>
+
+
+
+
+              <!--  -->
             </div>
             <!-- second 50% -->
             <div style="width: 55%;">
 
-              <div class="form-floating mb-3 mt-3 ">
+              <!-- <div class="form-floating mb-3 mt-3 ">
                 <input type="text" class="form-control form-control-sm" id="tittle" placeholder="Enter..."
                   autocomplete="off" formControlName="Tittle" name="Des">
                 <label for="tittle">*Tittle...</label>
+              </div> -->
+
+              <!-- 2nd Select Box for ProjectName -->
+              <div include="form-input-select()">
+                <select required>
+                  <!--
+      This is how we can do "placeholder" options.
+      note: "required" attribute is on the select
+    -->
+                  <option value="" >Select Project</option>
+
+                  <!-- normal options -->
+                  <option value="{{project.project_Name}}" *ngFor="let project of projectDetailsData"> {{ project.project_Name }}</option>
+             
+                </select>
               </div>
             </div>
 

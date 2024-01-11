@@ -324,10 +324,7 @@
 <div class="row mt-1">
     <div class="col-md-12">
         <select class="classic" (change)="onSelect($event)" style=" float: right;min-width: 300px; ">
-            <!-- <div *ngFor="let user of AllDetailsArr">
-           
-            <option value="{{user.id}}">{{user.userName}}</option>
-        </div> -->
+      
             <option value="">--Select User--</option>
             <option *ngFor="let option of RoleArray" [value]="option.Role">
                 {{ option.Role }}

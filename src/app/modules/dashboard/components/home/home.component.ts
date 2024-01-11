@@ -54,7 +54,7 @@ export class HomeComponent
     this.dataCount.length = 1;
     this.TaskGroup = this.fb.group({
       id: [''],
-      Send_To: ['', Validators.required],
+      Send_To: [''],
       Message: ['', Validators.required],
       Tittle: ['', Validators.required],
       Description: ['', Validators.required],
@@ -71,6 +71,9 @@ console.log(this.time);
 
     this.getTaskRecord();
     this.colorChangeFunction();
+    this.GetProjectDetails()
+    this.getUserdetailsFunction()
+  
   }
   ngDoCheck(): void {}
   ngAfterContentInit(): void {}
@@ -328,5 +331,33 @@ Delete(id:any){
       
     }
   })
+}
+projectDetailsData:any=[]
+GetProjectDetails(){
+  this.service.projectGet().subscribe({
+    next:(res)=>{
+  this.projectDetailsData=   res
+  console.log('projectDe',this.projectDetailsData);
+  
+    },error:(err)=>{
+      console.log(err);
+      
+    }
+  })
+}
+UserNameDataArray:any;
+getUserdetailsFunction(){
+this.service.AllUserDetails().subscribe({
+  next:async(res)=>{
+  this.UserNameDataArray=  await res
+  console.log('username',this.UserNameDataArray);
+  
+  },
+
+  error:(err)=>{
+    console.log(err);
+    
+  }
+})
 }
 }

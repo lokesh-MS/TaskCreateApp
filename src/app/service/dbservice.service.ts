@@ -20,9 +20,14 @@ myLocalIIS_URL='http://localhost/TaskApi/api/';
   LoginService(userData:any){
     return this.http.post(this.publicIp+'Login/authenticate',userData);
   }
+  AllUserDetails(){
+    return this.http.get(this.publicIp+'Login');
+  }
   SignUpService(userData:any){
     return this.http.post(this.publicIp+'signUp',userData);
+    //return this.http.post('https://localhost:7205/api/signUp',userData);
   }
+ 
   Createtaskservice(TaskData:any){
     return this.http.post(this.publicIp+'task',TaskData);
   }
@@ -66,6 +71,15 @@ downloadFile(filename: string): Observable<Blob> {
 }
 
 ExportToExcel(){
-  return this.http.get(this.exportExcelUrl, { responseType: 'arraybuffer' })
+  return this.http.get(this.publicIp+'Task/export', { responseType: 'arraybuffer' })
+}
+ProjectCraete(data:any){
+ 
+ return this.http.post(this.publicIp+'Project',data)
+}
+
+projectGet(){
+  // return this.http.get('https://localhost:7205/api/Project')
+  return this.http.get(this.publicIp+'Project')
 }
 }

@@ -30,6 +30,37 @@ export class StorageService {
 
 
 
-  // getting data from db methods 
+  // getting time from db methods 
+
+  getCurrentTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes: any = now.getMinutes();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var day = now.getDay();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert hours to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // The hour '0' should be '12'
+
+    // Add leading zero to single-digit minutes
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    var timeString =
+      hours +
+      ':' +
+      minutes +
+      ' ' +
+      ampm +
+      ' - ' +
+      year +
+      '/' +
+      month +
+      '/' +
+      day;
+    return timeString;
+  }
   
 }

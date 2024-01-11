@@ -47,31 +47,11 @@ export class NotificationComponent
     try {
       let C = 0;
       this.service.getTaskService().subscribe({
-        next: (res: any) => {
-          this.TaskRecord = res;
-          const currentDate = new Date(); // Assuming today's date
-          const startOfDay = new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth(),
-            currentDate.getDate()
-          );
-          const endOfDay = new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth(),
-            currentDate.getDate() + 1
-          );
+        next: async(res: any) => {
+          this.TaskRecord = await res;
+         
           this.filteredData = this.TaskRecord;
-          //     setTimeout(() => {
-
-          //       this.filteredData = this.TaskRecord.filter((item:any) => {
-
-          //         const itemDate = new Date(item.task_Assign_Time);
-          //         return   itemDate >= startOfDay && itemDate < endOfDay;
-          //       });
-          // console.log(this.notifyCount);
-
-          //     }, 100);
-          this.newMessage();
+         await this.newMessage();
         },
         error: (err: any) => {
           console.log(err);
@@ -101,18 +81,9 @@ export class NotificationComponent
         ) {
           
           let CreateBtn = document.getElementById(`crd${filterItem.id}`);
-          // if(CreateBtn){
           console.log(`elment :${CreateBtn}`);
           $(CreateBtn).addClass('newMsgStyle');
-          console.log(filterItem.tittle);
-          // }
-          // if (filterItem.is_Opened == null) {
-          //   this.messageCont = this.messageCont++;
-          // } else {
-          //   this.messageCont = this.messageCont--;
-          // }
-
-          //  localStorage.setItem('NCount', this.messageCont);
+          
         }
       });
     }

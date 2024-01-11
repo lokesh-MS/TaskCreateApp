@@ -134,21 +134,7 @@ export class LoginComponent implements OnInit {
   }
 
   signUpMethod() {
-    debugger
-    // if (
-
-    //   this.signUpGroup.value.password == '' ||
-    //   this.signUpGroup.value.Repassword == ''
-    // ) {
-    //  let userNameInput= this.el.nativeElement.querySelector('#user');
-    //   let passwordInput = this.el.nativeElement.querySelector('#pwd1');
-    //   let rePasswordInput = this.el.nativeElement.querySelector('#pwd2');
-    //   this.renderer.setStyle(userNameInput,'border-color', 'red');
-    //   this.renderer.setStyle(passwordInput, 'border-color', 'red');
-    //   this.renderer.setStyle(rePasswordInput, 'border-color', 'red');
-    //   this.notify.showError('Please Enter Password', 'SignUp!');
-    //   return;
-    // }
+   
     if (this.signUpGroup.value.username == '') {
       let userNameInput = this.el.nativeElement.querySelector('#user');
 
@@ -181,7 +167,7 @@ export class LoginComponent implements OnInit {
     }
 
 
-    let currentTime = this.getCurrentTime();
+    let currentTime = this.storage.getCurrentTime();
     this.signUpGroup.value.SignUpdate = currentTime.toString();
     this.services.SignUpService(this.signUpGroup.value).subscribe({
       next: (res: any) => {
@@ -205,36 +191,5 @@ export class LoginComponent implements OnInit {
    
   }
 
-  // time fun
-
-  getCurrentTime() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes: any = now.getMinutes();
-    var year = now.getFullYear();
-    var month = now.getMonth();
-    var day = now.getDay();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-
-    // Convert hours to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // The hour '0' should be '12'
-
-    // Add leading zero to single-digit minutes
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-
-    var timeString =
-      hours +
-      ':' +
-      minutes +
-      ' ' +
-      ampm +
-      ' - ' +
-      year +
-      '/' +
-      month +
-      '/' +
-      day;
-    return timeString;
-  }
+ 
 }

@@ -36,6 +36,6 @@ import { TotalRecordsComponent } from './components/total-records/total-records.
     CommonModule,
     DashboardRoutingModule,ReactiveFormsModule,FormsModule,
   ],
-  providers:[NotificationComponent]
+  providers:[NotificationComponent,DashboardComponent]
 })
 export class DashboardModule { }

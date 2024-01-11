@@ -32,16 +32,9 @@ getPendingRecords(){
  this.filterData= this.records.filter((item:any)=>{
   // debugger
     if(item.status!='c' && item.send_To==this.userName){
-      this.pendingCount++;
-return this.filterData.push(item)
+     return item
     }
-    // else if(item.status=='c' && item.send_To==this.userName){
-    //   this.pendingCount--;
-    // }
   })
-
-  console.log(` count ${this.pendingCount}`);
-  localStorage.setItem('pendingCount',this.pendingCount)
       },
       error:(err)=>{
         console.log(err);
