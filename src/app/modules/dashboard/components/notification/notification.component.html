@@ -10,7 +10,7 @@
     
     <div  *ngFor="let arrdata of reverArr">
     
-      <div id="crd{{arrdata.id}}" class="crd" *ngIf="arrdata.send_To==userName && arrdata.status!='c'">
+      <div id="crd{{arrdata.id}}" class="crd" *ngIf="arrdata.send_To==userName && arrdata.status!='c' && arrdata.is_Opened!='yes'">
         <p><span id="time">{{arrdata.time}}</span></p> 
         <!-- <i class='bx bx-message-alt-x'></i> -->
         <i class='bx bx-bell'></i>

@@ -1,117 +1,114 @@
+<div class="row mt-4">
 
-<div class="row">
+  <select class="classic" (change)="onSelect($event)" style=" float: right;min-width: 300px; ">
+ 
+    <option value="">--Filter Records--</option>
+    <option *ngFor="let option of userNameArray" [value]="option.username">
+      {{ option.username }}
+    </option>
 
-    <select class="classic" (change)="onSelect($event)" style=" float: right;min-width: 300px; ">
-        <!-- <div *ngFor="let user of AllDetailsArr">
-       
-        <option value="{{user.id}}">{{user.userName}}</option>
-    </div> -->
-        <option value="">--Select User--</option>
-        <option *ngFor="let option of userNameArray" [value]="option.id">
-            {{ option.userName }}
-        </option>
-
-    </select>
+  </select>
 
 </div>
 
 <div class="row" style="margin: 0;">
-    <!-- <div class="outlayer" *ngFor="let data of CompletedRecordsArray"></div> -->
-
- 
-    
-        <div class="container" style="width: 97%;">
-          <h2 class="mb-5">Total Records</h2>
-          
-    
-          <div class="table-responsive custom-table-responsive">
-            <!-- <i class='bx bxs-file-pdf' (click)="Export()"></i> -->
-            <i class='bx bx-export' (click)="Export()"></i>
-            <table class="table custom-table">
-            
-              <thead>
-                <tr>  
-    
-                  <th scope="col">
-                    <label class="control control--checkbox">
-                      <input type="checkbox"  class="js-check-all"/>
-                      <div class="control__indicator"></div>
-                    </label>
-<!--                               
-    <div class="checkbox-wrapper-40" >
-        <label>
-          <input type="checkbox" checked />
-          <span class="checkbox"></span>
-        </label>
-      </div> -->
-                  </th>
-                  
-                  <th scope="col">Order</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Project Name</th>
-                 
-                  <th scope="col">Project Head</th>
-                  <th scope="col">Records</th>
-                  <th scope="col">Date</th>
-
-                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr scope="row">
-                  <th scope="row">
-                    <label class="control control--checkbox">
-                      <input type="checkbox"/>
-                      <div class="control__indicator"></div>
-                    </label>
-                  </th>
-                  <td>
-                    1392
-                  </td>
-                  <td><a href="#">James Yates</a></td>
-                  <td>
-                    Web Designer
-                    <small class="d-block">Far far away, behind the word mountains</small>
-                  </td>
-                 
-                  <td>+63 983 0962 971</td>
-                  <td>63</td>
-                  <td>09-01-2023</td>
-                  <td>NY University</td>
-                </tr>
-                <tr class="spacer"><td colspan="100"></td></tr>
-                <tr>
-                  <th scope="row">
-                    <label class="control control--checkbox">
-                      <input type="checkbox"/>
-                      <div class="control__indicator"></div>
-                    </label>
-                  </th>
-                  
-                  <td>4616</td>
-                  <td><a href="#">Matthew Wasil</a></td>
-                  <td>
-                    Graphic Designer
-                    <small class="d-block">Far far away, behind the word mountains</small>
-                  </td>
-                 
-                  <td>+02 020 3994 929</td>
-                  <td>83</td>
-                  <td>09-01-2023</td>
-                  <td>London College</td>
-                </tr>
-                <tr class="spacer"><td colspan="100"></td></tr>
-             
-                
-              </tbody>
-            </table>
-          </div>
-    
-    
-        </div>
-    
+  <!-- <div class="outlayer" *ngFor="let data of CompletedRecordsArray"></div> -->
 
 
 
+  <div class="container" style="width: 97%;">
+    <div class="sticky">
+      <h2 class="mb-5">Total Records</h2>
+      <div  *ngIf="!IsMessage" class="btnDiv" style="position: relative; height: 60px;">
+        <button class="button-73" (click)="Export()" role="button">Export</button>  
+          <button (click)="refreshPage()" type="button" class="btn btn-danger">Clear</button>
+      </div>
+  
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+</div>
+
+<div class="row" style="width: 100%;">
+
+
+  <!-- <div class="table-responsive custom-table-responsive" >
+       
+
+    <table  >
+      <thead>
+         
+      </thead>
+      <tbody >
+       
+        <tr class="spacer"><td colspan="100"></td></tr>
+      
+     
+        
+      </tbody>
+  </table>
+
+  </div> -->
+
+
+
+  <div class="table-container">
+    <table class="display">
+      <thead>
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">Project Name</th>
+
+          <th *ngIf="Project_Head" scope="col">Project Head</th>
+          <th *ngIf="Project_Head" scope="col">Completd</th>
+          <th *ngIf="Project_Head" scope="col">Pending</th>
+          <th *ngIf="Is_Records" scope="col">Records</th>
+          <th *ngIf="!Is_Records" scope="col">Date</th>
+
+
+        </tr>
+      </thead>
+      <div *ngIf="IsMessage" style="position: absolute;
+      text-align: center;
+      width: 80%;">
+        <span id="errmsg">{{message}}</span>
+      </div>
+      <tbody>
+
+        <tr *ngFor="let user of usersListArray; let i = index">
+
+          <td>
+            {{i+1}}
+          </td>
+          <td *ngIf="user.username"><a>{{user.username}}</a></td>
+          <td *ngIf="user.username=='' || user.username==null"><a>{{user.send_To}}</a></td>
+          <td>
+            Software Developer
+            <small class="d-block">{{user.role}}</small>
+          </td>
+
+          <td *ngIf="user.project"><span>{{user.project}}</span></td>
+
+          <td *ngIf="user.project==null"><span>{{user.tittle}}</span></td>
+          <td *ngIf="Project_Head"><span>{{user.project_Head}}</span></td>
+          <td *ngIf="Project_Head"><span id="complete">{{user.completed_Count}}</span></td>
+          <td *ngIf="Project_Head"><span id="pending">{{user.pending_Count}}</span></td>
+          <td *ngIf="Project_Head"><span id="recordCound">{{user.records_Count}}</span></td>
+          <td *ngIf="!Project_Head"><span >{{user.task_Assign_Time}}</span></td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

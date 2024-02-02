@@ -134,8 +134,17 @@
         box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
         width: 82%;
         margin: auto;
+        animation: myAnim 2s ease 0s 1 normal forwards;
       }
-
+      @keyframes myAnim {
+        0% {
+          transform: scale(0.5);
+        }
+      
+        100% {
+          transform: scale(1);
+        }
+      }
       #row2{
         margin-top: 24px;
       }

@@ -1,8 +1,8 @@
-<div class="row">
+<!-- <div class="row">
 
     <div class="line">
 
-        <!-- TODAY<span> & </span>TASK -->
+
         <p
             style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">
             User INFO</p>
@@ -17,20 +17,12 @@
     <div class="col-md-6 mt-3">
       
         <div class="form-Group" [formGroup]="searchGroup" style="position: relative;">
-            <!-- <div class="search" style="position: absolute;">
-            <span class="fa-brands fa-searchengin" (click)="search()"></span>
-
-            <input id="input" placeholder="Search User Details " formControlName="userInput">
-          </div> -->
-
+        
         </div>
 
 
         <select class="classic" (change)="onSelect($event)" style=" float: right;min-width: 300px; ">
-            <!-- <div *ngFor="let user of AllDetailsArr">
-           
-            <option value="{{user.id}}">{{user.userName}}</option>
-        </div> -->
+        
             <option value="">--Select User--</option>
             <option *ngFor="let option of AllDetailsArr" [value]="option.id">
                 {{ option.userName }}
@@ -45,7 +37,7 @@
 </div>
 <div class="row mt-4" *ngIf="isUserDetails">
 
-    <!-- app.component.html [src]="data.user_Img"-->
+
     <div *ngFor="let data of arrayOfObjects">
         <div class="container bootstrap snippets bootdey">
             <div class="panel-body inf-content">
@@ -63,7 +55,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <!-- <strong>Information</strong><br>  src="https://bootdey.com/img/Content/avatar/avatar7.png"-->
+                     
                         <div class="table-responsive">
                             <table class="table table-user-information">
                                 <tbody>
@@ -81,7 +73,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-user  text-primary"></span>     -->
+                                          
                                                 <i class="fa-solid fa-user-tie  text-primary"></i>
                                                 Name
                                             </strong>
@@ -93,7 +85,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-cloud text-primary"></span>   -->
+                                            
                                                 <i class="fa-solid fa-venus-mars text-primary"></i>
                                                 Gender
                                             </strong>
@@ -102,23 +94,12 @@
                                             {{data.gender}}
                                         </td>
                                     </tr>
-                                    <!--         
-                            <tr>        
-                                <td>
-                                    <strong>
-                                        <span class="glyphicon glyphicon-user text-primary"></span> 
-                                        Username                                                
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{data.userName}}
-                                </td>
-                            </tr> -->
+                     
 
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-home text-primary"></span>  -->
+                                         
                                                 <i class="fa-solid fa-house-chimney-user text-primary"></i>
                                                 <i class="bi bi-geo-alt"></i> Address
                                             </strong>
@@ -144,7 +125,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-phone text-primary"></span>  -->
+                                           
                                                 <i class="fa-solid fa-phone text-primary"></i>
                                                 Mobile
                                             </strong>
@@ -156,7 +137,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-briefcase text-primary"></span>  -->
+                                          
                                                 <i class="fa-solid fa-building-user text-primary"></i>
                                                 Department
                                             </strong>
@@ -168,7 +149,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-calendar text-primary"></span> -->
+                                          
                                                 <i class="fa-solid fa-calendar-days  text-primary"></i>
 
                                                 DOB
@@ -183,7 +164,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-envelope text-primary"></span>  -->
+                                        
                                                 <i class="fa-solid fa-envelope text-primary"></i>
                                                 Email
                                             </strong>
@@ -208,7 +189,7 @@
                                     <tr>
                                         <td>
                                             <strong>
-                                                <!-- <span class="glyphicon glyphicon-calendar text-primary"></span> -->
+                                             
                                                 <i class="fa-solid fa-calendar-days  text-primary"></i>
                                                 Joining Date
                                             </strong>
@@ -237,11 +218,6 @@
 </div>
 
 
-<!-- userCreate Form -->
-
-
-
-        <!--  -->
 
         <div class="container mt-3" style=" padding: 10px 70px;
         width: 50%;
@@ -314,7 +290,6 @@
             </form>
           </div>
 
-          <!-- project Create -->
           <div class="container mt-3" style=" padding: 10px 0px;
           width: 50%;
           margin: auto;" *ngIf="isProjectCreate">
@@ -344,7 +319,7 @@
 
 </div>
    
-<!-- 2nd Row -->
+
 <div class="row">
 
     <div class="col-md-6">
@@ -377,4 +352,8 @@
         </div>
     </form>
           </div>
-          
+           -->
+
+
+
+           <app-admin></app-admin>

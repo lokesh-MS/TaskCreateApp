@@ -15,7 +15,14 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { PendingListComponent } from './components/pending-list/pending-list.component';
 import { TotalRecordsComponent } from './components/total-records/total-records.component';
 
-
+import { HighchartsChartModule } from 'highcharts-angular';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChartModule } from 'angular-highcharts';
+import * as accessibility from 'highcharts/modules/accessibility';
+import { ProjectComponent } from './components/project/project.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { UserCreationComponent } from './components/user-creation/user-creation.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +37,13 @@ import { TotalRecordsComponent } from './components/total-records/total-records.
     ProfileComponent,
     UserInfoComponent,
     PendingListComponent,
-    TotalRecordsComponent
+    TotalRecordsComponent,ParentComponent, ProjectComponent, AdminComponent, UserCreationComponent, ProjectDetailsComponent
+  
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,ReactiveFormsModule,FormsModule,
+    DashboardRoutingModule,ReactiveFormsModule,FormsModule,HighchartsChartModule,ChartModule
   ],
-  providers:[NotificationComponent,DashboardComponent]
+  providers:[NotificationComponent,DashboardComponent,SidenavComponent]
 })
 export class DashboardModule { }

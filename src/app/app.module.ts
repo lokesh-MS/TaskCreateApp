@@ -12,6 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { ViewComponent } from './view/view.component';
 import { MatConfirmDialogComponentComponent } from './mat-confirm-dialog-component/mat-confirm-dialog-component.component';
 // Import from library
+// highChart
+import { HighchartsChartModule } from 'highcharts-angular';
+
 import {
   NgxAwesomePopupModule,
   DialogConfigModule,
@@ -35,6 +38,7 @@ import {
     ToastNotificationConfigModule.forRoot(), // Needed for instantiating toast notifications.
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HighchartsChartModule //higChart
   ],
   providers: [],
   bootstrap: [AppComponent]

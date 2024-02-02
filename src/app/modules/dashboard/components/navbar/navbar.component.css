@@ -22,14 +22,19 @@ img{
     width: auto;
     margin-left: 10px;
 }
-.fa-user-tie{
+.bx-user-pin{
     font-size: 27px;
     position: absolute;
     right: 13px;
     color: #ebf465;
-    top: 13px;
+    top: 19px;
     cursor: pointer;
 
+}
+.bx-user-pin:hover{
+    transform: scale(1.5);
+    transition: 1s ease;
+    color: white;
 }
 @media only screen and (max-width: 600px) {
     .navbar-toggler-icon{

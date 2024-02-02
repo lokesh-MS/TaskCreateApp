@@ -61,7 +61,10 @@
 
 
             <div id="info">
-                <p style="font-family:   Playball ; text-indent: 50px;
+                <p style="
+                /* font-family:   Playball ;  */
+                font-family: serif;
+                text-indent: 50px;
                 text-align: justify;
                 text-justify: inter-word;
                 word-spacing: 4px;
@@ -70,6 +73,13 @@
                 padding: 0px 19px 0px 3px;
                 font-size: 18px;
                ">{{data.message}}</p>
+               <p style="    text-align: center;
+               font-weight: bold;
+               color: darkblue;
+               font-size: 23px;
+             
+               font-family: ui-monospace;
+               transition: 2s;"> {{data.description}}</p>
             </div>
 
             <!-- <div id="userNote" *ngIf="data.user_Note!=null && data.user_Note!=''">

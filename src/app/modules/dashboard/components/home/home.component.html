@@ -13,7 +13,7 @@
   </h1>
 </div>
 <div id="cardDiv">
-  <div *ngFor="let arrdata of filteredData" style="position: relative;">
+  <div *ngFor="let arrdata of filteredData" >
 
     <div id="crd1{{arrdata.id}}" *ngIf="arrdata.created_By==userName" class="crd"
       [ngClass]="{'stage1': condition1, 'stage2': condition2, 'stage3': condition3}">
@@ -68,22 +68,13 @@
         <form [formGroup]="TaskGroup">
           <div style="display: flex; width: 100%; justify-content: space-between;">
             <div style="width: 44%;">
-              <!-- <div class="form-floating mb-3 mt-3 ">
-                <input type="text" class="form-control form-control-sm" id="To" placeholder="Enter..."
-                  autocomplete="off" formControlName="Send_To" name="SendTo">
-                <label for="To">*To...</label>
-              </div> -->
-              <!-- first select Box for To -->
               <div include="form-input-select()">
-                <select required>
-                  <!--
-      This is how we can do "placeholder" options.
-      note: "required" attribute is on the select
-    -->
-    <option value="" >Select To</option>
+                <select required id="To" (change)="onToSelect($event)"  style="color: #282020;">
+   
+    <option>Select To</option>
 
     <!-- normal options -->
-    <option value="{{User.userName}}" *ngFor="let User of UserNameDataArray"> {{ User.username }}</option>
+    <option value="{{User.username}}" *ngFor="let User of UserNameDataArray"><span *ngIf="User.username!=userName">{{ User.username }}</span> </option>
                
                 </select>
               </div>
@@ -95,20 +86,9 @@
             </div>
             <!-- second 50% -->
             <div style="width: 55%;">
-
-              <!-- <div class="form-floating mb-3 mt-3 ">
-                <input type="text" class="form-control form-control-sm" id="tittle" placeholder="Enter..."
-                  autocomplete="off" formControlName="Tittle" name="Des">
-                <label for="tittle">*Tittle...</label>
-              </div> -->
-
               <!-- 2nd Select Box for ProjectName -->
               <div include="form-input-select()">
-                <select required>
-                  <!--
-      This is how we can do "placeholder" options.
-      note: "required" attribute is on the select
-    -->
+                <select required id="tittle" (change)="onProjectSelect($event)" style="color: #282020;">
                   <option value="" >Select Project</option>
 
                   <!-- normal options -->
@@ -121,7 +101,7 @@
           </div>
 
           <div class="form-floating mb-3 mt-3 ">
-            <input type="text" class="form-control form-control-sm" id="des" placeholder="Enter..." autocomplete="off"
+            <input type="text" class="form-control form-control-sm" id="des" maxlength="110" placeholder="Enter..." autocomplete="off"
               formControlName="Description" name="Des">
             <label for="To">Description...</label>
           </div>

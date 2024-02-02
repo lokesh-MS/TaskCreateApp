@@ -1,23 +1,28 @@
-<app-navbar></app-navbar>
-<div style="display: flex; width: 100%;">
-<div style="width: 16%;">
-    <app-sidenav></app-sidenav>
+<div class="row" style="width: 100%;text-align: center;margin-left: 0%;background-color: #80c2d459">
+  <h2>Analytics</h2>
 </div>
-<div style="width: 84%;
-height: 100%;">
-<div style="margin-top: 244px;
-margin-left: 36%;    position: absolute;">
-  <img src="./assets/images/teamLiftssLogo.png" style=" width: auto;opacity: 0.3;height: auto; image-resolution: from-image;" alt="team">
+<div class="row mt-1" style="width: 100%;">
 
+  <div class="col-md-7" style="margin: 0;padding: 0;">
+
+    <highcharts-chart class="pie" [Highcharts]="Highcharts" [options]="chartOptions"
+      style="width: 100%; display: block;height: 75vh; font-size: 30px;"></highcharts-chart>
+
+
+
+
+  </div>
+  <div class="col-md-5" style="margin: 0;padding: 0;">
+    <!-- angular_HighChart -->
+
+
+
+
+    <div class="pie" [chart]="pieChart" style="width: 100%;display: flex; height: 75vh;">
+
+    </div>
+
+  </div>
+  <!-- secod Part -->
+  
 </div>
-
-
-    <router-outlet></router-outlet>
-</div>
-</div>
-
-
-<!-- <div style="display: flex;width: 100%;" >
-  <div></div>
-
-</div>  -->

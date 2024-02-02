@@ -48,7 +48,7 @@ ngOnInit(): void {
   })
 }
 postUserInfo(){
-// debugger
+// 
 try{
   this.userInfoGroup.value.UserName=this.storageService.GetUser();
   this.userInfoGroup.value.User_Img=this.imageUrl;
@@ -75,7 +75,7 @@ catch(err){
 // imagesrc ="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg";
 // selectedFile:any;
 // imgUpload (event:any) {
-//   debugger
+//   
 //   var image:HTMLElement|any = document.getElementById("output");
 //  let img= event.target.files[0].name;
 //  this.selectedFile = event.target.files[0] as File;
@@ -109,9 +109,9 @@ console.log(this.imageUrl);
   // });
 }
 imgUpload(img:any){
-  debugger
+  
   let FileNameData:any;
-  console.log(this.formData.get('File'));
+
 
    
   this.service.FileUpload(this.formData).subscribe({

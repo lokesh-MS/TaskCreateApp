@@ -13,44 +13,37 @@
         <input type="text" autocomplete="off" id="searchText" placeholder="Search..."  (input)="search($event)">
         <span class="tooltip">Search</span> -->
       </li>
-      <!-- <li>
-        <a routerLink="home" >
-          <i class='bx bx-edit'></i>
-          <span class="links_name">Home </span>
+      <li>
+        <a routerLink="dashboard">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="links_name">Analytics</span>
         </a>
-        <span class="tooltip">Home </span>
-      </li> -->
+        <span class="tooltip">Analytics</span>
+      </li>
       <li *ngIf="Role=='Admin' || Role=='TL'">
         <a routerLink="create">
-          <!-- <i class='bx bx-grid-alt'></i> -->
-          <!-- <i class='bx bx-home'></i> -->
-          <!-- <i class='bx bxs-pencil'></i> -->
+     
           <i class='bx bx-pencil' ></i>
           <span class="links_name">Job Assign</span>
-          <!-- <span class="links_name">Dashboard</span> -->
         </a>
         <span class="tooltip">Job Assign</span>
       </li>
     
   
-      <!-- <li >
-        <a >
-         
-  
-          <ul class="dropdown-menu" style="margin-left: 65px;">
-            <span class="links_name">compose </span>
-          </ul>
-         
-        </a>
-        
-       
-      </li> -->
-      <li *ngIf="Role!='Programer' && Role!='TL'">
+<!--   
+      <li *ngIf="Role=='Admin' || Role=='TL'" >
         <a routerLink="userInfo">
           <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
           <span class="links_name">Users</span>
         </a>
         <span class="tooltip">Users</span>
+      </li> -->
+      <li *ngIf="Role=='Admin' || Role=='TL'" >
+        <a routerLink="userInfo">
+          <i class='bx bx-user' id="toggle" data-bs-toggle="dropdown"  aria-expanded="false"></i>
+          <span class="links_name">Admin</span>
+        </a>
+        <span class="tooltip">Admin</span>
       </li>
       <li>
         <a routerLink="Notification">
@@ -60,21 +53,6 @@
         </a>
         <span class="tooltip">Notification</span>
       </li>
-      <!-- <li>
-        <a routerLink="">
-          <i class='bx bx-chat'></i>
-          <span class="links_name">Messages</span>
-        </a>
-        <span class="tooltip">Messages</span>
-      </li> -->
-      <!-- <li>
-        <a routerLink="">
-          <i class='bx bx-pie-chart-alt-2'></i>
-          <span class="links_name">Analytics</span>
-        </a>
-        <span class="tooltip">Analytics</span>
-      </li> -->
-
       <li>
         <a routerLink="pendingList">
           <!-- <i class='bx bx-folder'></i> -->
@@ -86,7 +64,7 @@
       <li>
         <a routerLink="TaskList">
           <!-- <i class='bx bx-list-ol'></i> -->
-          <i class='bx bx-list-check' ></i>
+          <i class='bx bx-list-check' style="font-size: 23px;" ></i>
           <span class="links_name">Completed <span  id="count">{{completedCount}}</span></span>
         </a>
         <span class="tooltip">Completed List</span>
@@ -94,7 +72,7 @@
       <li>
         <a routerLink="TotalRecords">
           <!-- <i class='bx bx-list-ol'></i> -->
-          <i class='bx bx-list-check' ></i>
+          <i class='bx bx-list-ul'></i>
           <span class="links_name">Records</span>
         </a>
         <span class="tooltip">Records</span>
@@ -108,13 +86,13 @@
         </a>
         <span class="tooltip">Saved</span>
       </li>
-      <li *ngIf="Role!='programer'">
+      <!-- <li *ngIf="Role!='programer'">
         <a routerLink="">
           <i class='bx bx-cog'></i>
           <span class="links_name">Setting</span>
         </a>
         <span class="tooltip">Setting</span>
-      </li>
+      </li> -->
       <li class="profile" (click)="LogOutPopUp()">
         <div class="profile-details">
           <!-- <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="profileImg"> <i class='bx bx-log-out' id="log_out" style="cursor: pointer;"></i>-->

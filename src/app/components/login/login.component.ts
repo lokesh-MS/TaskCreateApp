@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('Role',res.role)
         localStorage.setItem('userName',res.username)
         this.notify.showSuccess('LoginSuccessfully', 'Login!');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/parent']);
       },
       error: (err: any) => {
         console.log(err.error.message);
@@ -184,8 +184,8 @@ export class LoginComponent implements OnInit {
         this.renderer.setStyle(userNameInput, 'border-color', 'red');
         this.renderer.setStyle(passwordInput, 'border-color', 'red');
         this.renderer.setStyle(rePasswordInput, 'border-color', 'red');
-        this.notify.showError(err.error, 'SignUp');
-        console.log(err.error);
+        this.notify.showError(err.error.message, 'SignUp');
+        console.log(err.error.message);
       },
     });
    

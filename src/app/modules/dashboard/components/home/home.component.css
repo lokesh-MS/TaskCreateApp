@@ -32,19 +32,19 @@
   .crd {
     min-height: 200px;
     display: flex;
-    /* flex-direction: column;
-    justify-content: space-between; */
+    flex-direction: column;
+    justify-content: space-between;
     height: 205px;
     width: 200px;
-    /* padding: 35px; */
+
     margin-left: 30px;
     margin-top: 36px;
-    /* border: 1px solid rgba(255, 255, 255, .25); */
+
    border-radius: 20px;
-    /* background-color: rgba(255, 255, 255, 0.45); */
+
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
     animation: myAnim 2s ease 0s 1 normal forwards;
-    /* backdrop-filter: blur(15px);  */
+    backdrop-filter: blur(15px); 
   }
 
   */
@@ -53,15 +53,15 @@
   }
   .stage1{
     border: 1px solid red;
-    /* background-color: red; */
+   
   }
   .stage2{
     border: 1px solid rgb(255, 255, 0);
-    /* background-color: red; */
+
   }
   .stage3{
     border: 1px solid rgb(0, 255, 38);
-    /* background-color: red; */
+
   }
 
   .btn-success{
@@ -71,7 +71,7 @@
   
     left: 0;
     border-radius: 3px 7px 0px 20px;
-    /* border-radius: 10px 0px 20px; */
+
     background-color: #006E7F !important;
   }
   .btn-success:hover{
@@ -85,11 +85,9 @@
     width: 96px;
     bottom: 0;
     position: absolute;
-    /* right: 40px; */
     color: whitesmoke;
     right: 0px;
     border-radius: 7px 4px 20px 0px;
-    /* border-radius: 0px 11px 1px 18px; */
     background-color: #006E7F !important;
   }
   .bx-bookmark-alt-plus{
@@ -102,10 +100,7 @@
   .bx-bookmark-alt-plus:hover{
     cursor: pointer;
   }
-  /* #crd:hover{
-    cursor: pointer;
-    opacity: 0.5;
-  } */
+
 #cardDiv{
   margin-top: 50px;
   display: grid;
@@ -130,7 +125,7 @@ input[type="text"],
 textarea {
     outline: none;
     box-shadow: none !important;
-    border: 1px solid #000000 ;
+    border: 1px solid #7a9d8a ;
     background: transparent;
     font-weight: bold;
     
@@ -191,14 +186,12 @@ h1 .spanCard {color: #B3B04F;}
 .borderStyle{
   border: 1px solid red !important;
 }
-/* .modaleEditBtn{
-  display: none;
-} */
+
 .modaleBtn{
   display: none;
 }
 
-/* @keyframes myAnim {
+@keyframes myAnim {
 	0% {
 		transform: scale(0.5);
 	}
@@ -206,10 +199,10 @@ h1 .spanCard {color: #B3B04F;}
 	100% {
 		transform: scale(1);
 	}
-} */
+}
 
 
-@keyframes myAnim {
+/* @keyframes myAnim {
 	0% {
 		animation-timing-function: ease-in;
 		opacity: 0;
@@ -251,7 +244,7 @@ h1 .spanCard {color: #B3B04F;}
 		animation-timing-function: ease-out;
 		transform: translateY(0);
 	}
-}
+} */
 
 /* select Box desing in modal */
 
@@ -381,7 +374,7 @@ h1 .spanCard {color: #B3B04F;}
   border-top-color: #005ba6;
 }
 [include*="form-input-select()"] select {
-  border: 3px solid #e6e6e6;
+  border: 3px solid #7a9d8a;
   border-radius: 0;
   font-weight: 400;
   color: inherit;
@@ -402,16 +395,7 @@ h1 .spanCard {color: #B3B04F;}
   color: #c7c7c7;
 }
 
-/* body {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border: 1em solid #005ba6;
-} */
+
 body div {
   max-width: 16em;
 }

@@ -1,0 +1,156 @@
+select.classic2{
+    min-width: 230px !important;
+  float: left !important;
+  width: 20% !important;
+  margin-left: 10px;
+  }
+  .btn-success{
+    right: 0px;
+    position: absolute;
+    width: 32%;
+  }
+  button[type="submit"]:hover{
+  opacity: 0.7;
+  }
+  select.classic2 {
+    background-image:
+      linear-gradient(45deg, transparent 50%, blue 50%),
+      linear-gradient(135deg, blue 50%, transparent 50%),
+      linear-gradient(to right, skyblue, skyblue);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select.classic2:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      linear-gradient(to right, gray, gray);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+    border-color: grey;
+    outline: 0;
+  }
+
+
+  /* table Design */
+  
+  table span{
+    font-weight: bold;
+  /* color: rgb(16, 249, 249); */
+  }
+#complete{
+color: green;
+}
+#pending{
+color: darkorange;
+}
+/* #recordCound{
+color: black;
+} */
+/* #task_Assign_Time{
+color: black;
+} */
+#errmsg{
+font-size: 25px;
+  text-align: center;
+  color: #b40000;
+  font-family: 'Playball';
+  letter-spacing: 3px;
+}
+  /* Table Scrolling Style */
+  /* CSS */
+
+
+  table{
+    width: 100%;
+    margin-left: 10px;
+    border-collapse: collapse;
+  }
+  .scrollable-body {
+    display: block;
+  }
+  thead {
+    background-color: #10acc4d9; /* Set a background color for the header */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 2px 0px;
+  }
+  th{
+    padding: 10px 0px !important;
+    text-align: center;
+    border: 1px solid;
+  }
+  td{
+    text-align: center;
+    border: 1px solid;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+    
+    }
+   tbody tr:hover{
+   
+    cursor: pointer;
+    }
+    tbody{
+      cursor: pointer;
+      border: 1px solid ;
+    }
+    .btn-danger{
+      position: absolute;
+      right: 21px;
+      cursor: pointer;
+      font-family: -apple-system,sans-serif;
+      font-weight: 700;
+      letter-spacing: -.24px;
+      margin: 0;
+      outline: none;
+      color: #002e74;
+      background-color: #c9414e;
+      border-color: #dc3545;
+      width: 7%;
+    }
+    .btn-danger:hover{
+      opacity: 0.9;
+    }
+    .add-btn{
+        background-color: #004D74;
+        color: white;
+        width: 100%;
+    }
+    tbody, td, tfoot, th, thead, tr {
+        padding:10px;
+    }
+    #pName{
+      font-size: 24px;
+    color: #00228b;
+    font-family: serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #ff7800;
+    }
+    input{
+      width: 65%;
+      margin: auto;
+      margin-bottom: 3px;
+    }
+    form{
+      width: 90%;
+      margin: auto;
+    }

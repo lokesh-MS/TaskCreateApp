@@ -82,7 +82,7 @@ export class UserInfoComponent implements OnInit, AfterContentChecked {
   selectedOption: any;
   isUserDetails=false;
   onSelect(event: any) {
-    debugger;
+    ;
     try {
       this.isUserDetails=true
       // Get the selected value from the event
@@ -112,14 +112,14 @@ export class UserInfoComponent implements OnInit, AfterContentChecked {
 
 
   onRoleSelect(e:any){
-    debugger;
+    // ;
  // Get the selected value from the event
  this.selectedOption = e.target.value;
  console.log(this.selectedOption);
 this.usersGroup.value.Role=this.selectedOption
   }
   onProjectSelect(e:any){
-    debugger;
+    ;
  // Get the selected value from the event
  this.selectedOption = e.target.value;
  console.log(this.selectedOption);
@@ -136,7 +136,7 @@ this.usersGroup.value.Project=this.selectedOption
     this.GetProjectDetails()
   }
   UserSubmit(){
-    debugger
+    
     let Username=this.usersGroup.value.Username
     let Password=this.usersGroup.value.Password
     let RePassword=this.usersGroup.value.Repassword
@@ -168,10 +168,10 @@ else if(Password=="" || Password==null){
   return
 }
 else{
-debugger
+
   let currentTime = this.storage.getCurrentTime();
   this.usersGroup.value.U_Created_date = currentTime.toString();
-  this.service.SignUpService(this.usersGroup.value).subscribe({
+  this.service.CreatUser(this.usersGroup.value).subscribe({
     next: (res: any) => {
       this.notify.showSuccess('Created Successfully', 'userCreate!');
  
@@ -200,7 +200,7 @@ debugger
   }
   isValid=false
   projectSubmit(){
-debugger
+
   let projectname=  this.ProjectGroup.value.Project_Name
 
 if(projectname=="" || projectname==null){
@@ -234,5 +234,8 @@ console.log(`ProjectArray:-${err}`);
 
       }
     })
+  }
+  ProjectInfo(){
+    
   }
 }

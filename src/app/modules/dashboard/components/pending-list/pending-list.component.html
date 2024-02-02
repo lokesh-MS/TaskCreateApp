@@ -10,7 +10,7 @@
   
   <div  *ngFor="let data of filterData">
   
-    <div id="crd{{data.id}}" class="crd" *ngIf="data.send_To==userName && data.status!='c'">
+    <div id="crd{{data.id}}" class="crd" *ngIf="data.send_To==userName && data.status!='c' && data.is_Opened=='yes'">
       <p><span id="time">{{data.time}}</span></p> 
       <!-- <i class='bx bx-message-alt-x'></i> -->
       <i class='bx bx-bell'></i>

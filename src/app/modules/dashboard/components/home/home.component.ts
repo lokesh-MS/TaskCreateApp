@@ -75,11 +75,13 @@ console.log(this.time);
     this.getUserdetailsFunction()
   
   }
-  ngDoCheck(): void {}
+  ngDoCheck(): void {
+    
+  }
   ngAfterContentInit(): void {}
   ngAfterContentChecked(): void {
     this.colorChangeFunction();
-    console.log(<HTMLElement>document.getElementById('crd'));
+ 
   }
   createAndAppendElement(): void {
     this.TaskGroup.reset();
@@ -93,11 +95,16 @@ console.log(this.time);
   }
 
   CraeteTask() {
+     
+   
     this.TaskGroup.value.Task_Assign_Time = this.time;
     this.TaskGroup.value.Time = this.timeString;
     this.TaskGroup.value.Created_By = this.sessionStorage.GetUser();
-    debugger
-    if(this.TaskGroup.value.Message=="" || this.TaskGroup.value.Message==null){
+    this.TaskGroup.value.Send_To=  this.selectedTo  ;
+   this.TaskGroup.value.Tittle = this.selectedProject;
+  
+    if(this.TaskGroup.value.Message=="" || this.TaskGroup.value.Message==null || this.TaskGroup.value.Tittle=="" ||  this.TaskGroup.value.Tittle ==null
+   ||  this.TaskGroup.value.Send_To== null  ||  this.TaskGroup.value.Send_To == ""){
 let txtBox=document.getElementById('textArea')
 if(txtBox){
 
@@ -112,6 +119,9 @@ else{
 }
     }
     else{
+
+
+
       this.service.Createtaskservice(this.TaskGroup.value).subscribe({
         next: (res: any) => {
           this.TaskRecord = res;
@@ -140,6 +150,7 @@ else{
 
   // Time funtionality
   timeString: any;
+  TaskAssigntimeString:any
   getCurrentTime() {
     var now = new Date();
     var hours: any = now.getHours();
@@ -161,10 +172,10 @@ else{
 
     // var timeString = hours + ':' + minutes + ' ' + ampm +' - '+year+'/'+month+'/'+day;
     const currentDate = new Date();
-    //  this.timeString  = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+     this.TaskAssigntimeString  = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     this.timeString = `${hours}:${minutes} ${ampm}`;
 
-    return currentDate;
+    return this.TaskAssigntimeString;
   }
   // toggel btn funtion
   onCheckboxChange(event: any) {
@@ -238,7 +249,7 @@ else{
   }
   ReadTaskrecord(id:any) {
 this.sessionStorage.StoreTaskId(id)
-this.router.navigate(['dashboard/View'])
+this.router.navigate(['parent/View'])
   }
   Update() {
     let dataId = this.TaskGroup.value.id;
@@ -258,7 +269,7 @@ this.router.navigate(['dashboard/View'])
 
   colorChangeFunction() {
 
-    console.log('have data1 conchecked');
+    
     if (this.filteredData.length > 0) {
       this.filteredData.filter((item) => {
         let CurrentStatus: string = '';
@@ -307,8 +318,9 @@ this.router.navigate(['dashboard/View'])
           if(resp.clickedButtonID){
 
             if(resp.clickedButtonID=='yes'){
-              console.log('Button clicked: ', resp.clickedButtonID);
+           
               this.Delete(id)
+              this.getTaskRecord();
 
             }
            else{
@@ -337,7 +349,7 @@ GetProjectDetails(){
   this.service.projectGet().subscribe({
     next:(res)=>{
   this.projectDetailsData=   res
-  console.log('projectDe',this.projectDetailsData);
+
   
     },error:(err)=>{
       console.log(err);
@@ -359,5 +371,19 @@ this.service.AllUserDetails().subscribe({
     
   }
 })
+}
+selectedProject: any
+onProjectSelect(e:any){
+ // Get the selected value from the event
+ this.selectedProject = e.target.value;
+
+this.TaskGroup.value.Tittle=this.selectedProject
+}
+selectedTo: any
+onToSelect(e:any){
+
+  this.selectedTo = e.target.value;
+
+this.TaskGroup.value.Send_To=this.selectedTo
 }
 }

@@ -1,0 +1,75 @@
+
+
+
+        <!--  -->
+
+        <div class="container mt-3" style=" padding: 10px 70px;
+        width: 50%;
+        margin: auto;"  >
+            <h2 class="text-center">Create User</h2>
+            <hr>
+            <form [formGroup]="usersGroup">
+              <div class="form-floating mb-3 mt-4 ">
+                <input type="text" class="form-control form-control-sm" id="user" placeholder="Enter Username"
+                  autocomplete="off" formControlName="Username" name="Username">
+                <label for="user">User ID</label>
+              </div>
+              <div class="form-floating mt-3 mb-4">
+                <input type="text" class="form-control form-control-sm" id="pwd1"
+                  placeholder="Enter password" autocomplete="off" formControlName="Password" name="pwd1">
+                <span class="form-floating" style="float: right;bottom: 38px;right: 10px; color: #002142;"><i
+                    class='bx bx-happy-heart-eyes ' style="cursor: pointer;font-size: 24px;"
+                    ></i></span>
+
+                <label for="pwd1">Password</label>
+              </div>
+
+
+              <div class="form-floating mb-3 ">
+                <input type="password" class="form-control form-control-sm" id="pwd2"
+                  placeholder="Confirm password" autocomplete="off" 
+                  formControlName="Repassword">
+                <label for="pwd2">Confirm password</label>
+              </div>
+              <div style="display: flex; position: relative;">
+
+                   <div class="col-md-6">
+
+                <select class="classic2"   (change)="onRoleSelect($event)" style=" float: right;min-width: 300px;width: 95%;
+                ">
+      
+                    <option value="">--Select Role--</option>
+                    <option *ngFor="let option of RoleArray" [value]="option.role">
+                        {{ option.role }}
+                    </option>
+        
+                </select>
+
+             </div>
+             <div class="col-md-6">
+                <select class="classic2"   (change)="onProjectSelect($event)" style=" float: right;min-width: 300px;width: 100%;
+                ">
+      
+                    <option value="">--Select Project--</option>
+                    <option *ngFor="let option of projectArray" [value]="option.project_Name">
+                        {{ option.project_Name }}
+                    </option>
+        
+                </select>
+
+             </div>
+       
+           
+              </div>
+              <div style="display: flex; position: relative;">
+           <div class="col-md-6"></div>
+           <div class="col-md-6"> <button type="submit" class="btn " style="right: 0px;
+            position: absolute;
+            width: 27%;
+            top: 10px;" (click)="UserSubmit()">Create</button></div>
+                
+                   </div>
+               
+            
+            </form>
+          </div>

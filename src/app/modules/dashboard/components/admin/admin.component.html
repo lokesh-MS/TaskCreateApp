@@ -1,0 +1,32 @@
+
+
+    <div class="line" style="position: relative;">
+
+        <!-- TODAY<span> & </span>TASK -->
+        <p
+            style="display: block; text-align: center;display: block;text-align: center;font-size: 30px;font-family: math;">
+           Admin Page</p>
+           <div  style=" width: 100%; ">
+            <div style="border-bottom:1px solid gray ; display: flex; width: 100%;padding: 3px 0px;">
+             <div style="width:70% ;"></div>
+             <div style="width: 30%;">
+                <button type="button" class="btn" (click)="CreateUser()">Create User </button>
+                <button type="button" class="btn btn-info" style="    margin-left: 6px;" (click)="CreateProject()">Create Project</button>
+                <button type="button" class="btn btn-info" style="    margin-left: 6px;" (click)="ProjectInfo()">Project Info</button>
+
+            </div>
+ 
+              
+            </div>
+       
+            
+        </div>
+
+    </div>
+
+
+
+<!--child Components Routers -->
+<div class="row" style="width: 100%;">
+    <router-outlet></router-outlet>
+    </div>

@@ -1,6 +1,5 @@
 
 
-
 .classic{
 
     width: 22%;
@@ -9,16 +8,6 @@
 
 
 }
-.table{
-    color: red;
-}
-/* body {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background-color: #19191d;
-    font-weight: 300; 
-margin: 0;
-padding: 0;
-} */
 
 p {
     color: black;
@@ -50,21 +39,20 @@ p {
     color: green;
 
   }
-  .custom-table {
+  /* .custom-table {
     min-width: 900px; }
     .custom-table thead tr, .custom-table thead th {
       border-top: none;
       border-bottom: none !important;
-      /* color: #fff; */
-      color: #004D74;
+   
+      color: #ffffff;
     
     }
     .custom-table tbody th, .custom-table tbody td {
       color: #777;
       font-weight: 400;
-      padding-bottom: 20px;
-      padding-top: 20px;
-      font-weight: 300; }
+   
+      font-weight: bold; }
       .custom-table tbody th small, .custom-table tbody td small {
         color: black;
         font-weight: bold;
@@ -105,67 +93,90 @@ p {
       .custom-table tbody tr.active th a, .custom-table tbody tr.active td a, .custom-table tbody tr:hover th a, .custom-table tbody tr:hover td a {
         color: #fff; }
   
-  /* Custom Checkbox */
-  .control {
-    display: block;
-    position: relative;
-    margin-bottom: 25px;
-    cursor: pointer;
-    font-size: 18px; }
-  
-  .control input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0; }
-  
-  .control__indicator {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border-radius: 4px;
-    border: 2px solid #3f3f47;
-    background: transparent; }
-  
-  .control--radio .control__indicator {
-    border-radius: 50%; }
-  
-  .control:hover input ~ .control__indicator,
-  .control input:focus ~ .control__indicator {
-    border: 2px solid #007bff; }
-  
-  .control input:checked ~ .control__indicator {
-    border: 2px solid #007bff;
-    background: #007bff; }
-  
-  .control input:disabled ~ .control__indicator {
-    background: #e6e6e6;
-    opacity: 0.6;
-    pointer-events: none;
-    border: 2px solid #ccc; }
-  
-  .control__indicator:after {
-    font-family: 'icomoon';
-    content: '\e5ca';
-    position: absolute;
-    display: none; }
-  
-  .control input:checked ~ .control__indicator:after {
-    display: block;
-    color: #fff; }
-  
-  .control--checkbox .control__indicator:after {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -52%);
-    -ms-transform: translate(-50%, -52%);
-    transform: translate(-50%, -52%); }
-  
-  .control--checkbox input:disabled ~ .control__indicator:after {
-    border-color: #7b7b7b; }
-  
-  .control--checkbox input:disabled:checked ~ .control__indicator {
-    background-color: #007bff;
-    opacity: .2;
-    border: 2px solid #007bff; }
+
+   */
+
+    table span{
+      font-weight: bold;
+    /* color: rgb(16, 249, 249); */
+    }
+#complete{
+  color: green;
+}
+#pending{
+  color: darkorange;
+}
+/* #recordCound{
+  color: black;
+} */
+/* #task_Assign_Time{
+  color: black;
+} */
+#errmsg{
+  font-size: 25px;
+    text-align: center;
+    color: #b40000;
+    font-family: 'Playball';
+    letter-spacing: 3px;
+}
+    /* Table Scrolling Style */
+    /* CSS */
+    .table-container {
+      max-height: 400px; /* Set the desired height for the scrollable area */
+      overflow-y: auto;
+    }
+
+    table{
+      width: 97%;
+      margin-left: 10px;
+      border-collapse: collapse;
+    }
+    .scrollable-body {
+      display: block;
+    }
+    thead {
+      background-color: #10acc4d9; /* Set a background color for the header */
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: 2px 0px;
+    }
+    th{
+      padding: 10px 0px;
+      text-align: center;
+    }
+    td{
+      text-align: center;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+      
+      }
+     tbody tr:hover{
+      background-color: black;
+      color: white !important;
+      transition: 0.4s ease-in;
+      border: 1px dashed gray;
+      cursor: pointer;
+      }
+      tbody{
+        cursor: pointer;
+      }
+      .btn-danger{
+        position: absolute;
+        right: 21px;
+        cursor: pointer;
+        font-family: -apple-system,sans-serif;
+        font-weight: 700;
+        letter-spacing: -.24px;
+        margin: 0;
+        outline: none;
+        color: #002e74;
+        background-color: #c9414e;
+        border-color: #dc3545;
+        width: 7%;
+      }
+      .btn-danger:hover{
+        opacity: 0.9;
+      }

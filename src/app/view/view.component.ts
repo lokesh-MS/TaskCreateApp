@@ -21,7 +21,7 @@ ngOnInit(): void {
 
 async getSingleRecord(id:any){
   try{
-    debugger
+    
   await  this.service.GetSingleTask(id).subscribe({
       next:(res=>{
   this.singleData.push(res)
@@ -41,6 +41,6 @@ console.log(`Catch Error:-${err}`);
 }
 
 GoBack(){
-this.router.navigateByUrl("dashboard")
+this.router.navigateByUrl("parent")
 }
 }

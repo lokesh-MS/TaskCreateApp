@@ -295,6 +295,53 @@ select.minimal {
   100% { background-position: 0 0; }
 }
 
+/* CSS */
+.button-73 {
+  position: absolute;
+  padding: 7px 2rem;
+  right: 110px;
+  appearance: none;
+  background-color: #48a9c5;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #002e74;
+
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #23bf93c7;
+  box-shadow: #d0df2c 0 -6px 8px inset;
+  transform: scale(1);
+  color: rgb(0, 0, 0);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 16px;
+    /* padding: .75rem 2rem; */
+  }
+}
 /*  */
   @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';

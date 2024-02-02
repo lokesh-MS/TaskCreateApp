@@ -10,9 +10,16 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ViewComponent } from 'src/app/view/view.component';
 import { PendingListComponent } from './components/pending-list/pending-list.component';
 import { TotalRecordsComponent } from './components/total-records/total-records.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { UserCreationComponent } from './components/user-creation/user-creation.component';
+import { ProjectComponent } from './components/project/project.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+
 
 const routes: Routes = [
-  {path:'',component:DashboardComponent,children:[
+  {path:'',component:ParentComponent,children:[
+    {path:'dashboard',component:DashboardComponent},
     {path:'create',component:HomeComponent},
     {path:'pendingList',component:PendingListComponent},
     {path:'TaskView',component:TaskviewComponent},
@@ -24,7 +31,14 @@ const routes: Routes = [
     {path:'View',component:ViewComponent},
 
     // {path:'',redirectTo:'dashbord/home',pathMatch:'full'},
-  ]}
+    {path:'userInfo',component:AdminComponent,children:[
+      {path:'CreateUser',component:UserCreationComponent},
+      {path:'CreateProject',component:ProjectComponent},
+      {path:'ProjectDetails',component:ProjectDetailsComponent}
+    ]}
+  ]},
+ 
+  
 ];
 
 @NgModule({

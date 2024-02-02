@@ -63,7 +63,7 @@ export class NotificationComponent
   }
 
   ViewTask(id: any) {
-    this.router.navigate(['dashboard/TaskView']);
+    this.router.navigate(['parent/TaskView']);
     this.Storage.StoreTaskId(id);
   }
 
@@ -81,7 +81,7 @@ export class NotificationComponent
         ) {
           
           let CreateBtn = document.getElementById(`crd${filterItem.id}`);
-          console.log(`elment :${CreateBtn}`);
+        
           $(CreateBtn).addClass('newMsgStyle');
           
         }

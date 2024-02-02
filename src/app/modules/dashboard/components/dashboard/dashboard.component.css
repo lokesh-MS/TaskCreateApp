@@ -1,3 +1,27 @@
-/* body{
-    background-image: url(/src/assets/images/download.png);
-} */
+
+.charts{
+
+    display: flex;
+   
+   margin-left: 5px;
+}
+
+.pie{
+
+    /* flex: 1; */
+    /* box-shadow: 10px 10px 5px #aaaaaa; */
+
+}
+
+.line{
+    flex: 1;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+h2{
+    color: #004D74;
+    font-family: 'Playball';
+    font-size: 42px;
+    text-shadow: 2px 2px 7px;
+    letter-spacing: 2px;
+    margin-top: 14px;
+}

@@ -21,8 +21,19 @@ myLocalIIS_URL='http://localhost/TaskApi/api/';
     return this.http.post(this.publicIp+'Login/authenticate',userData);
   }
   AllUserDetails(){
-    return this.http.get(this.publicIp+'Login');
+    return this.http.get(this.publicIp+'Users');
   }
+  SingleProgramerInfo(id:any){
+    return this.http.get(this.publicIp+'Users/'+id);
+  }
+  EditUserDetails(id:any,userData:any){
+    
+    return this.http.put(this.publicIp+'Users/'+id,userData)
+  }
+  CreatUser(userData:any){
+return this.http.post(this.publicIp+'Users',userData);
+  }
+
   SignUpService(userData:any){
     return this.http.post(this.publicIp+'signUp',userData);
     //return this.http.post('https://localhost:7205/api/signUp',userData);
@@ -70,7 +81,11 @@ downloadFile(filename: string): Observable<Blob> {
   return this.http.get(url, { responseType: 'blob' });
 }
 
-ExportToExcel(){
+singleExportToExcel(name:any){
+  // return this.http.get(this.publicIp+'Task/export', { responseType: 'arraybuffer' })https://localhost:7205/api/Task/export?name=
+  return this.http.get(this.publicIp+`Task/export?name=${name}`, { responseType: 'arraybuffer' })
+}
+AllExportToExcel(){
   return this.http.get(this.publicIp+'Task/export', { responseType: 'arraybuffer' })
 }
 ProjectCraete(data:any){
@@ -78,8 +93,16 @@ ProjectCraete(data:any){
  return this.http.post(this.publicIp+'Project',data)
 }
 
+ProjectEdit(id:any,data:any){
+  debugger
+  return this.http.put(this.publicIp+'Project/'+id,data)
+}
 projectGet(){
   // return this.http.get('https://localhost:7205/api/Project')
   return this.http.get(this.publicIp+'Project')
+}
+singleProjectDetails(id:any){
+
+  return this.http.get(this.publicIp+'Project/'+id)
 }
 }

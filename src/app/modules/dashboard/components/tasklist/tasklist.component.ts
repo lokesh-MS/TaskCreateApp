@@ -25,7 +25,7 @@ export class TasklistComponent implements OnInit{
   
 this.StorageService.StoreTaskId(Inx)
 
-    this.route.navigate(['dashboard/View'])
+    this.route.navigate(['parent/View'])
   }
   getTaskRecord(){
    
@@ -33,13 +33,20 @@ this.StorageService.StoreTaskId(Inx)
     try{
       this.service.getTaskService().subscribe({
         next:(res:any)=>{
-  console.log(res);
+
   this.TaskRecord=res;
+
            this.TaskRecord.filter((item:any)=>{
-            if(user==item.send_To && item.status=="c"){
-              this.userArray.push(item)
+            if(user==item.send_To ){
+              if(item.status=='c'){
+                this.userArray.push(item)
+             
+           
+              }
+           
             }
            })
+         
         },
         error:(err:any)=>{
           console.log(err);

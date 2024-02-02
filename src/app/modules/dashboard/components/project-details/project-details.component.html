@@ -1,0 +1,146 @@
+<select class="classic2"   (change)="onProjectSelect($event)" style=" float: right;min-width: 300px;width: 100%;
+">
+
+    <option value="">--Select Project--</option>
+    <option *ngFor="let option of projectArray" [value]="option.id">
+        {{ option.project_Name }}
+  
+    </option>
+
+</select>
+
+<div class="row" style="width: 100%;">
+<div class="col-md-1"></div>
+<div class="col-md-10" *ngIf="isTable">
+    <div  style="    text-align: center;">
+        <p style="    font-weight: bold;
+        color: cornflowerblue;
+        font-size: 20px;
+        font-family: emoji;">Project Details</p>
+     
+  <div class="table-container" >
+    <table class="display" >
+      <thead>
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">project Name</th>
+          <th scope="col">Project Head</th>
+          <th scope="col">project Location</th>
+          <th scope="col">Project Duration</th>
+          <th scope="col">Total Modules</th>
+          <th scope="col">Total Screens</th>
+       
+         <th>Modules/Screens</th>
+         <th>Daily Update</th>
+
+
+        </tr>
+      </thead>
+ 
+      <tbody>
+
+        <tr *ngFor="let project of arrayOfObjects; let i = index" >
+
+          <td>
+            {{i+1}}
+          </td>
+         
+
+          <td ><span >{{project.project_Name}}</span></td>
+          <td><span>{{project.project_Head}}</span></td>
+          <td ><span>{{project.project_Location}}</span></td>
+          <td><span>{{project.project_Duration}}</span></td>
+         
+          <td>{{project.module_Count}}</td>
+          <td>{{project.screen_Count}}</td>
+       <td><button type="button" class="btn add-btn" (click)="addProjectDetails()">Add</button></td>
+       <td><button type="button" class="btn add-btn" (click)="DailyUpdate()">View</button></td>
+        
+
+<span id="projectName" style="display: none;" #mySpan>{{project.project_Name}}</span>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    </div>
+    <div class="projectDetails" *ngIf="isAddProjectDetails">
+    <form [formGroup]="dynamicForm " >
+        <div class="form-group" style="text-align: center; margin-top: 10px;">
+           <label for="pName" id="pName">{{project_Name}}</label>
+        </div>
+        <div class="form-group">
+            <input type="text"  placeholder="Enter Module Name" class="form-control" formControlName="moduleName">
+        </div>
+       
+        <div class="form-group"  style="height: 270px; overflow-y: scroll;">
+          <div formArrayName="screenName" style="width: 100%;" >
+            <div *ngFor="let control of screenName.controls; let i = index">
+              <div style="display: flex;width: 100%;">
+                <div style="width: 20%;position: relative;"> </div>
+                <div style="width: 80%;position: relative;">
+                  <label for="" style="position: absolute;left: 85px;">{{i+1}}</label>
+                  <input type="text"  placeholder="Enter Screen Name" [formControl]="$any(control)" class="form-control">
+                </div>
+                <div style="width: 20%;">
+                  <div>
+                    <button class="btn " style="background-color: orange;" (click)="addDynamicControl()"><i class='bx bx-plus-medical' ></i></button>
+                    <button class="btn " style="background-color: rgb(255, 0, 0); margin-left: 10px;" *ngIf="i>0" (click)="removeDynamicControl(i)"><i class='bx bxs-trash'></i></button>
+                  </div>
+                </div>
+              
+          
+              </div>
+              
+            
+            </div>
+          </div>
+          <!-- submit Btn -->
+          <div style="background-color: brown;position: relative;margin-top: 20px;">
+<button type="button" class="btn btn-primary" style="position: absolute;right: 153px;background-color: #004D74 !important;" (click)="onSubmit(dynamicForm .value)">Sumbit</button>
+          </div>
+        </div>
+   
+    </form>
+    </div>
+</div>
+<div class="col-md-10"*ngIf="IsUpadte">
+  <div class="table-container mt-4" >
+    <table class="display" >
+      <thead>
+        <tr>
+          <th scope="col">S.No</th>
+        
+          <th scope="col">Module Name</th>
+          <th scope="col" colspan="3">Screen<div><span style="color: #05296c;">Total </span>/<span style="color: orangered;">  Pending </span>/<span style="color: green;">  completed</span></div></th>
+          <th scope="col">Completed %</th>
+          <th scope="col">Pending %</th>
+          <th scope="col">Over All Status</th>
+       <th>Edit</th>
+       
+
+
+        </tr>
+      </thead>
+ 
+      <tbody>
+        <tr *ngFor="let project of ModuleObjArray; let i = index" >
+        <td>{{i+1}}</td>
+      
+        <td><span id="moduleName{{i+1}}">{{project.moduleName}}</span></td>
+        <td><span id="s_count{{i+1}}">{{project.sCount}}</span></td>
+        <td><span >{{project.pending_Count}}</span></td>
+        <td><span>{{project.completed_Count}}</span> <input style="display: none; width: 40px;" type="text" id="{{i+1}}"></td>
+        <td><span >{{project.complet_Percent}}%</span></td>
+        <td><span >{{project.pending_Percent}}%</span></td>
+        <td><span >{{project.project_Name}}</span></td>
+        <td id="edit{{i+1}}" style="display: block;"><Button class="btn btn-warning"  (click)="Edit(i+1)">Edit</Button></td>
+        <td   id="update{{i+1}}" style="display: none; border: none;"  ><Button class="btn btn-warning" style="background-color: green;color: white;" (click)="Update(i+1)">Update</Button></td>
+        </tr>
+       
+      </tbody>
+      
+      </table>
+</div>
+</div>
+<div class="col-md-1"></div>
+</div>

@@ -1,0 +1,65 @@
+  <!-- project Create -->
+  <div class="container mt-3" style=" padding: 10px 0px;
+  width: 50%;
+  margin: auto;">
+<h2 class="text-center">Create Project</h2>
+<hr>
+
+<form [formGroup]="ProjectGroup">
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-floating mb-3 mt-4 ">
+            <input type="text" class="form-control form-control-sm" id="project" (input)="checkExist()" placeholder="Enter Project"
+              autocomplete="off" formControlName="Project_Name" name="project">
+            <label for="project">Project Name*</label>
+            <span style="color: red;" *ngIf="isValid">Enter a Project Name!</span>
+          </div>
+    
+    </div>
+    <div class="col-md-6">
+        <div class="form-floating mb-3 mt-4 ">
+            <input type="text" class="form-control form-control-sm" id="projectHead" (input)="checkExist()" placeholder="Enter..."
+              autocomplete="off" formControlName="Project_Head" name="projectHead">
+            <label for="project">Project Head</label>
+          
+          </div>
+    
+    </div>
+    
+    
+    </div>
+       
+    <!-- 2nd Row -->
+    <div class="row">
+    
+        <div class="col-md-6">
+    
+            <div class="form-floating mb-3 mt-4 ">
+                <input type="text" class="form-control form-control-sm" id="projectLoc" (input)="checkExist()" placeholder="Enter..."
+                  autocomplete="off" formControlName="Project_Location" name="projectLoc">
+                <label for="project">Project Location</label>
+              
+              </div>
+    
+        </div>
+        <div class="col-md-6">
+    
+            <div class="form-floating mb-3 mt-4 ">
+                <input type="number" class="form-control form-control-sm" id="projectDuration"  placeholder="Enter..."
+                  autocomplete="off" formControlName="Project_Duration" name="projectDuration">
+                <label for="project">Project Duration</label>
+              
+              </div>
+    
+    
+        </div>
+    </div>
+    
+          <div style="display: flex; position: relative;">
+            <div style="position: absolute;right: 0px;">
+                <button type="submit"  class="btn" (click)="projectSubmit()">Create</button>
+            </div>
+            </div>
+        </form>
+
+    </div>

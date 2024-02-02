@@ -30,9 +30,13 @@ getPendingRecords(){
   this.records=res
 
  this.filterData= this.records.filter((item:any)=>{
-  // debugger
+  // 
     if(item.status!='c' && item.send_To==this.userName){
+   
+
      return item
+
+     
     }
   })
       },
@@ -48,7 +52,7 @@ catch(ex){
 }
 }
 ViewTask(id:any){
-  this.router.navigate(['dashboard/TaskView']);
+  this.router.navigate(['parent/TaskView']);
   this.Storage.StoreTaskId(id);
 }
 }
